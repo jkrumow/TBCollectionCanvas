@@ -1,7 +1,1 @@
 pod "TBCollectionCanvas", :path => "../TBCollectionCanvas.podspec"
-
-target "Demo" do
-end
-
-target "DemoTests" do
-end

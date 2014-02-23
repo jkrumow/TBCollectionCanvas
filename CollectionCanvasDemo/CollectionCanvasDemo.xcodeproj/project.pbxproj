@@ -21,15 +21,7 @@
 		152F99AE1800A69400C3162E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AD1800A69400C3162E /* Images.xcassets */; };
 		152F99B31800A6A300C3162E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AF1800A6A300C3162E /* Main_iPad.storyboard */; };
 		152F99B41800A6A300C3162E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99B11800A6A300C3162E /* Main_iPhone.storyboard */; };
-		152F99CC1800A6B000C3162E /* CanvasConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */; };
-		152F99CD1800A6B000C3162E /* CanvasMoveConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */; };
-		152F99CE1800A6B000C3162E /* CanvasNewConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */; };
-		152F99CF1800A6B000C3162E /* CanvasItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BE1800A6B000C3162E /* CanvasItemView.m */; };
-		152F99D01800A6B000C3162E /* CanvasNodeConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C11800A6B000C3162E /* CanvasNodeConnection.m */; };
-		152F99D11800A6B000C3162E /* CanvasNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C31800A6B000C3162E /* CanvasNodeView.m */; };
-		152F99D21800A6B000C3162E /* CollectionCanvasScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */; };
-		152F99D31800A6B000C3162E /* CollectionCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C71800A6B000C3162E /* CollectionCanvasView.m */; };
-		152F99D41800A6B000C3162E /* CollectionCanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */; };
+		D5450DA96C974916B93D9820 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E0ACEE120949319BEBD787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,26 +53,8 @@
 		152F99AD1800A69400C3162E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		152F99B01800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		152F99B21800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		152F99B71800A6B000C3162E /* CanvasConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasConnectionHandle.h; sourceTree = "<group>"; };
-		152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasConnectionHandle.m; sourceTree = "<group>"; };
-		152F99B91800A6B000C3162E /* CanvasMoveConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasMoveConnectionHandle.h; sourceTree = "<group>"; };
-		152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasMoveConnectionHandle.m; sourceTree = "<group>"; };
-		152F99BB1800A6B000C3162E /* CanvasNewConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNewConnectionHandle.h; sourceTree = "<group>"; };
-		152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNewConnectionHandle.m; sourceTree = "<group>"; };
-		152F99BD1800A6B000C3162E /* CanvasItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasItemView.h; sourceTree = "<group>"; };
-		152F99BE1800A6B000C3162E /* CanvasItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasItemView.m; sourceTree = "<group>"; };
-		152F99C01800A6B000C3162E /* CanvasNodeConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNodeConnection.h; sourceTree = "<group>"; };
-		152F99C11800A6B000C3162E /* CanvasNodeConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNodeConnection.m; sourceTree = "<group>"; };
-		152F99C21800A6B000C3162E /* CanvasNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNodeView.h; sourceTree = "<group>"; };
-		152F99C31800A6B000C3162E /* CanvasNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNodeView.m; sourceTree = "<group>"; };
-		152F99C41800A6B000C3162E /* CollectionCanvasScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasScrollView.h; sourceTree = "<group>"; };
-		152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasScrollView.m; sourceTree = "<group>"; };
-		152F99C61800A6B000C3162E /* CollectionCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasView.h; sourceTree = "<group>"; };
-		152F99C71800A6B000C3162E /* CollectionCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasView.m; sourceTree = "<group>"; };
-		152F99C81800A6B000C3162E /* CollectionCanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewController.h; sourceTree = "<group>"; };
-		152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasViewController.m; sourceTree = "<group>"; };
-		152F99CA1800A6B000C3162E /* CollectionCanvasViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewDataSource.h; sourceTree = "<group>"; };
-		152F99CB1800A6B000C3162E /* CollectionCanvasViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewDelegate.h; sourceTree = "<group>"; };
+		77E0ACEE120949319BEBD787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25B45E94CA8416EABCCC991 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +65,7 @@
 				152F992E1800A1AE00C3162E /* CoreGraphics.framework in Frameworks */,
 				152F99301800A1AE00C3162E /* UIKit.framework in Frameworks */,
 				152F992C1800A1AE00C3162E /* Foundation.framework in Frameworks */,
+				D5450DA96C974916B93D9820 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +89,7 @@
 				152F99531800A1AE00C3162E /* CollectionCanvasDemoTests */,
 				152F992A1800A1AE00C3162E /* Frameworks */,
 				152F99291800A1AE00C3162E /* Products */,
+				D25B45E94CA8416EABCCC991 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +109,7 @@
 				152F992D1800A1AE00C3162E /* CoreGraphics.framework */,
 				152F992F1800A1AE00C3162E /* UIKit.framework */,
 				152F994D1800A1AE00C3162E /* XCTest.framework */,
+				77E0ACEE120949319BEBD787 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,7 +117,6 @@
 		152F99311800A1AE00C3162E /* CollectionCanvasDemo */ = {
 			isa = PBXGroup;
 			children = (
-				152F99B51800A6B000C3162E /* CollectionCanvas */,
 				152F99AA1800A68900C3162E /* AppDelegate.h */,
 				152F99AB1800A68900C3162E /* AppDelegate.m */,
 				152F99AF1800A6A300C3162E /* Main_iPad.storyboard */,
@@ -180,50 +156,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		152F99B51800A6B000C3162E /* CollectionCanvas */ = {
-			isa = PBXGroup;
-			children = (
-				152F99B61800A6B000C3162E /* CanvasConnectionHandles */,
-				152F99BD1800A6B000C3162E /* CanvasItemView.h */,
-				152F99BE1800A6B000C3162E /* CanvasItemView.m */,
-				152F99BF1800A6B000C3162E /* CanvasNodeConnections */,
-				152F99C21800A6B000C3162E /* CanvasNodeView.h */,
-				152F99C31800A6B000C3162E /* CanvasNodeView.m */,
-				152F99C41800A6B000C3162E /* CollectionCanvasScrollView.h */,
-				152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */,
-				152F99C61800A6B000C3162E /* CollectionCanvasView.h */,
-				152F99C71800A6B000C3162E /* CollectionCanvasView.m */,
-				152F99C81800A6B000C3162E /* CollectionCanvasViewController.h */,
-				152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */,
-				152F99CA1800A6B000C3162E /* CollectionCanvasViewDataSource.h */,
-				152F99CB1800A6B000C3162E /* CollectionCanvasViewDelegate.h */,
-			);
-			name = CollectionCanvas;
-			path = ../../../CollectionCanvas;
-			sourceTree = "<group>";
-		};
-		152F99B61800A6B000C3162E /* CanvasConnectionHandles */ = {
-			isa = PBXGroup;
-			children = (
-				152F99B71800A6B000C3162E /* CanvasConnectionHandle.h */,
-				152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */,
-				152F99B91800A6B000C3162E /* CanvasMoveConnectionHandle.h */,
-				152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */,
-				152F99BB1800A6B000C3162E /* CanvasNewConnectionHandle.h */,
-				152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */,
-			);
-			path = CanvasConnectionHandles;
-			sourceTree = "<group>";
-		};
-		152F99BF1800A6B000C3162E /* CanvasNodeConnections */ = {
-			isa = PBXGroup;
-			children = (
-				152F99C01800A6B000C3162E /* CanvasNodeConnection.h */,
-				152F99C11800A6B000C3162E /* CanvasNodeConnection.m */,
-			);
-			path = CanvasNodeConnections;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 152F995D1800A1AE00C3162E /* Build configuration list for PBXNativeTarget "CollectionCanvasDemo" */;
 			buildPhases = (
+				BD4895C2BE3948E1986EB9D2 /* Check Pods Manifest.lock */,
 				152F99241800A1AE00C3162E /* Sources */,
 				152F99251800A1AE00C3162E /* Frameworks */,
 				152F99261800A1AE00C3162E /* Resources */,
+				41E6425F7593466EAB0E7105 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,22 +254,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41E6425F7593466EAB0E7105 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD4895C2BE3948E1986EB9D2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		152F99241800A1AE00C3162E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152F99D31800A6B000C3162E /* CollectionCanvasView.m in Sources */,
-				152F99D11800A6B000C3162E /* CanvasNodeView.m in Sources */,
 				152F99381800A1AE00C3162E /* main.m in Sources */,
-				152F99D21800A6B000C3162E /* CollectionCanvasScrollView.m in Sources */,
-				152F99D41800A6B000C3162E /* CollectionCanvasViewController.m in Sources */,
-				152F99CF1800A6B000C3162E /* CanvasItemView.m in Sources */,
-				152F99D01800A6B000C3162E /* CanvasNodeConnection.m in Sources */,
-				152F99CE1800A6B000C3162E /* CanvasNewConnectionHandle.m in Sources */,
 				152F99AC1800A68900C3162E /* AppDelegate.m in Sources */,
-				152F99CD1800A6B000C3162E /* CanvasMoveConnectionHandle.m in Sources */,
-				152F99CC1800A6B000C3162E /* CanvasConnectionHandle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +427,7 @@
 		};
 		152F995E1800A1AE00C3162E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25B45E94CA8416EABCCC991 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -485,6 +444,7 @@
 		};
 		152F995F1800A1AE00C3162E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25B45E94CA8416EABCCC991 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
