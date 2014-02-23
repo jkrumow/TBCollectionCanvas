@@ -52,7 +52,6 @@
     _collectionCanvasScrollView.zoomScale = 0.5;
     _collectionCanvasScrollView.minimumZoomScale = 0.3;
     _collectionCanvasScrollView.maximumZoomScale = 1.0;
-    _collectionCanvasScrollView.delegate = self;
     _collectionCanvasScrollView.collectionCanvasView.canvasViewDataSource = self;
     _collectionCanvasScrollView.collectionCanvasView.canvasViewDelegate = self;
     
@@ -133,18 +132,6 @@
 - (void)thumbImageForNodeViewAtIndexPath:(NSIndexPath *)indexPath
 {
     
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    return self.collectionCanvasScrollView.collectionCanvasView;
-}
-
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
-{
-    [self.collectionCanvasScrollView.collectionCanvasView zoomToScale:scale];
 }
 
 - (BOOL)isProcessingViews

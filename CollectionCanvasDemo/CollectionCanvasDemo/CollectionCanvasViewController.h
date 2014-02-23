@@ -36,8 +36,7 @@
  This class represents the view controller for a CollectionCanvasView.
  
  */
-@interface CollectionCanvasViewController : UIViewController <UIScrollViewDelegate
-, CollectionCanvasViewDataSource, CollectionCanvasViewDelegate>
+@interface CollectionCanvasViewController : UIViewController <CollectionCanvasViewDataSource, CollectionCanvasViewDelegate>
 
 @property (weak, nonatomic) UIViewController<CollectionCanvasViewControllerDelegate> *delegate;
 @property (weak, nonatomic) IBOutlet CollectionCanvasScrollView *collectionCanvasScrollView;

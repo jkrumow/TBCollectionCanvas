@@ -45,6 +45,8 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
         
         self.backgroundColor = [UIColor darkGrayColor];
         
+        self.delegate = self;
+        
         CollectionCanvasView *collectionCanvasView = [[CollectionCanvasView alloc] initWithFrame:CGRectMake(0.0, 0.0, CONTENT_WIDTH, CONTENT_HEIGHT)];
         self.collectionCanvasView = collectionCanvasView;
         self.collectionCanvasView.scrollView = self;
@@ -93,6 +95,18 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {
     return ([self.collectionCanvasView isProcessingViews] == NO);
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.collectionCanvasView;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    [self.collectionCanvasView zoomToScale:scale];
 }
 
 @end

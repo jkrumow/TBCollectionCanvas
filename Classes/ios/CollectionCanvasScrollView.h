@@ -40,7 +40,7 @@ extern CGFloat const CONTENT_HEIGHT;
  
  All touch events in a subview will not be cancelled while a CanvasItemView is being touched, moved etc.
  */
-@interface CollectionCanvasScrollView : UIScrollView
+@interface CollectionCanvasScrollView : UIScrollView <UIScrollViewDelegate>
 
 @property (strong, nonatomic) CollectionCanvasView *collectionCanvasView;
 
