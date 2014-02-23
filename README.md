@@ -21,7 +21,7 @@ it simply add the following line to your Podfile:
 
 ## Author
 
-Julian Krumow, julian.krumow@bogusmachine.com
+Julian Krumow, julian.krumow@tarbrain.com
 
 ## License
 
