@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		152F992C1800A1AE00C3162E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F992B1800A1AE00C3162E /* Foundation.framework */; };
+		152F992E1800A1AE00C3162E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F992D1800A1AE00C3162E /* CoreGraphics.framework */; };
+		152F99301800A1AE00C3162E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F992F1800A1AE00C3162E /* UIKit.framework */; };
+		152F99361800A1AE00C3162E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 152F99341800A1AE00C3162E /* InfoPlist.strings */; };
+		152F99381800A1AE00C3162E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99371800A1AE00C3162E /* main.m */; };
+		152F994E1800A1AE00C3162E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F994D1800A1AE00C3162E /* XCTest.framework */; };
+		152F994F1800A1AE00C3162E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F992B1800A1AE00C3162E /* Foundation.framework */; };
+		152F99501800A1AE00C3162E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F992F1800A1AE00C3162E /* UIKit.framework */; };
+		152F99581800A1AE00C3162E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 152F99561800A1AE00C3162E /* InfoPlist.strings */; };
+		152F995A1800A1AE00C3162E /* CollectionCanvasDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99591800A1AE00C3162E /* CollectionCanvasDemoTests.m */; };
+		152F99AC1800A68900C3162E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99AB1800A68900C3162E /* AppDelegate.m */; };
+		152F99AE1800A69400C3162E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AD1800A69400C3162E /* Images.xcassets */; };
+		152F99B31800A6A300C3162E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AF1800A6A300C3162E /* Main_iPad.storyboard */; };
+		152F99B41800A6A300C3162E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99B11800A6A300C3162E /* Main_iPhone.storyboard */; };
+		152F99CC1800A6B000C3162E /* CanvasConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */; };
+		152F99CD1800A6B000C3162E /* CanvasMoveConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */; };
+		152F99CE1800A6B000C3162E /* CanvasNewConnectionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */; };
+		152F99CF1800A6B000C3162E /* CanvasItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99BE1800A6B000C3162E /* CanvasItemView.m */; };
+		152F99D01800A6B000C3162E /* CanvasNodeConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C11800A6B000C3162E /* CanvasNodeConnection.m */; };
+		152F99D11800A6B000C3162E /* CanvasNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C31800A6B000C3162E /* CanvasNodeView.m */; };
+		152F99D21800A6B000C3162E /* CollectionCanvasScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */; };
+		152F99D31800A6B000C3162E /* CollectionCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C71800A6B000C3162E /* CollectionCanvasView.m */; };
+		152F99D41800A6B000C3162E /* CollectionCanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		152F99511800A1AE00C3162E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 152F99201800A1AE00C3162E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152F99271800A1AE00C3162E;
+			remoteInfo = CollectionCanvasDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		152F99281800A1AE00C3162E /* CollectionCanvasDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionCanvasDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		152F992B1800A1AE00C3162E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		152F992D1800A1AE00C3162E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		152F992F1800A1AE00C3162E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		152F99331800A1AE00C3162E /* CollectionCanvasDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionCanvasDemo-Info.plist"; sourceTree = "<group>"; };
+		152F99351800A1AE00C3162E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		152F99371800A1AE00C3162E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		152F99391800A1AE00C3162E /* CollectionCanvasDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollectionCanvasDemo-Prefix.pch"; sourceTree = "<group>"; };
+		152F994C1800A1AE00C3162E /* CollectionCanvasDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionCanvasDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		152F994D1800A1AE00C3162E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		152F99551800A1AE00C3162E /* CollectionCanvasDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionCanvasDemoTests-Info.plist"; sourceTree = "<group>"; };
+		152F99571800A1AE00C3162E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		152F99591800A1AE00C3162E /* CollectionCanvasDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasDemoTests.m; sourceTree = "<group>"; };
+		152F99AA1800A68900C3162E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		152F99AB1800A68900C3162E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		152F99AD1800A69400C3162E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		152F99B01800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		152F99B21800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		152F99B71800A6B000C3162E /* CanvasConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasConnectionHandle.h; sourceTree = "<group>"; };
+		152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasConnectionHandle.m; sourceTree = "<group>"; };
+		152F99B91800A6B000C3162E /* CanvasMoveConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasMoveConnectionHandle.h; sourceTree = "<group>"; };
+		152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasMoveConnectionHandle.m; sourceTree = "<group>"; };
+		152F99BB1800A6B000C3162E /* CanvasNewConnectionHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNewConnectionHandle.h; sourceTree = "<group>"; };
+		152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNewConnectionHandle.m; sourceTree = "<group>"; };
+		152F99BD1800A6B000C3162E /* CanvasItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasItemView.h; sourceTree = "<group>"; };
+		152F99BE1800A6B000C3162E /* CanvasItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasItemView.m; sourceTree = "<group>"; };
+		152F99C01800A6B000C3162E /* CanvasNodeConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNodeConnection.h; sourceTree = "<group>"; };
+		152F99C11800A6B000C3162E /* CanvasNodeConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNodeConnection.m; sourceTree = "<group>"; };
+		152F99C21800A6B000C3162E /* CanvasNodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasNodeView.h; sourceTree = "<group>"; };
+		152F99C31800A6B000C3162E /* CanvasNodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasNodeView.m; sourceTree = "<group>"; };
+		152F99C41800A6B000C3162E /* CollectionCanvasScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasScrollView.h; sourceTree = "<group>"; };
+		152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasScrollView.m; sourceTree = "<group>"; };
+		152F99C61800A6B000C3162E /* CollectionCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasView.h; sourceTree = "<group>"; };
+		152F99C71800A6B000C3162E /* CollectionCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasView.m; sourceTree = "<group>"; };
+		152F99C81800A6B000C3162E /* CollectionCanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewController.h; sourceTree = "<group>"; };
+		152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasViewController.m; sourceTree = "<group>"; };
+		152F99CA1800A6B000C3162E /* CollectionCanvasViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewDataSource.h; sourceTree = "<group>"; };
+		152F99CB1800A6B000C3162E /* CollectionCanvasViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		152F99251800A1AE00C3162E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F992E1800A1AE00C3162E /* CoreGraphics.framework in Frameworks */,
+				152F99301800A1AE00C3162E /* UIKit.framework in Frameworks */,
+				152F992C1800A1AE00C3162E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152F99491800A1AE00C3162E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F994E1800A1AE00C3162E /* XCTest.framework in Frameworks */,
+				152F99501800A1AE00C3162E /* UIKit.framework in Frameworks */,
+				152F994F1800A1AE00C3162E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		152F991F1800A1AE00C3162E = {
+			isa = PBXGroup;
+			children = (
+				152F99311800A1AE00C3162E /* CollectionCanvasDemo */,
+				152F99531800A1AE00C3162E /* CollectionCanvasDemoTests */,
+				152F992A1800A1AE00C3162E /* Frameworks */,
+				152F99291800A1AE00C3162E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		152F99291800A1AE00C3162E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				152F99281800A1AE00C3162E /* CollectionCanvasDemo.app */,
+				152F994C1800A1AE00C3162E /* CollectionCanvasDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		152F992A1800A1AE00C3162E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				152F992B1800A1AE00C3162E /* Foundation.framework */,
+				152F992D1800A1AE00C3162E /* CoreGraphics.framework */,
+				152F992F1800A1AE00C3162E /* UIKit.framework */,
+				152F994D1800A1AE00C3162E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		152F99311800A1AE00C3162E /* CollectionCanvasDemo */ = {
+			isa = PBXGroup;
+			children = (
+				152F99B51800A6B000C3162E /* CollectionCanvas */,
+				152F99AA1800A68900C3162E /* AppDelegate.h */,
+				152F99AB1800A68900C3162E /* AppDelegate.m */,
+				152F99AF1800A6A300C3162E /* Main_iPad.storyboard */,
+				152F99B11800A6A300C3162E /* Main_iPhone.storyboard */,
+				152F99AD1800A69400C3162E /* Images.xcassets */,
+				152F99321800A1AE00C3162E /* Supporting Files */,
+			);
+			path = CollectionCanvasDemo;
+			sourceTree = "<group>";
+		};
+		152F99321800A1AE00C3162E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				152F99331800A1AE00C3162E /* CollectionCanvasDemo-Info.plist */,
+				152F99341800A1AE00C3162E /* InfoPlist.strings */,
+				152F99371800A1AE00C3162E /* main.m */,
+				152F99391800A1AE00C3162E /* CollectionCanvasDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		152F99531800A1AE00C3162E /* CollectionCanvasDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				152F99591800A1AE00C3162E /* CollectionCanvasDemoTests.m */,
+				152F99541800A1AE00C3162E /* Supporting Files */,
+			);
+			path = CollectionCanvasDemoTests;
+			sourceTree = "<group>";
+		};
+		152F99541800A1AE00C3162E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				152F99551800A1AE00C3162E /* CollectionCanvasDemoTests-Info.plist */,
+				152F99561800A1AE00C3162E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		152F99B51800A6B000C3162E /* CollectionCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				152F99B61800A6B000C3162E /* CanvasConnectionHandles */,
+				152F99BD1800A6B000C3162E /* CanvasItemView.h */,
+				152F99BE1800A6B000C3162E /* CanvasItemView.m */,
+				152F99BF1800A6B000C3162E /* CanvasNodeConnections */,
+				152F99C21800A6B000C3162E /* CanvasNodeView.h */,
+				152F99C31800A6B000C3162E /* CanvasNodeView.m */,
+				152F99C41800A6B000C3162E /* CollectionCanvasScrollView.h */,
+				152F99C51800A6B000C3162E /* CollectionCanvasScrollView.m */,
+				152F99C61800A6B000C3162E /* CollectionCanvasView.h */,
+				152F99C71800A6B000C3162E /* CollectionCanvasView.m */,
+				152F99C81800A6B000C3162E /* CollectionCanvasViewController.h */,
+				152F99C91800A6B000C3162E /* CollectionCanvasViewController.m */,
+				152F99CA1800A6B000C3162E /* CollectionCanvasViewDataSource.h */,
+				152F99CB1800A6B000C3162E /* CollectionCanvasViewDelegate.h */,
+			);
+			name = CollectionCanvas;
+			path = ../../../CollectionCanvas;
+			sourceTree = "<group>";
+		};
+		152F99B61800A6B000C3162E /* CanvasConnectionHandles */ = {
+			isa = PBXGroup;
+			children = (
+				152F99B71800A6B000C3162E /* CanvasConnectionHandle.h */,
+				152F99B81800A6B000C3162E /* CanvasConnectionHandle.m */,
+				152F99B91800A6B000C3162E /* CanvasMoveConnectionHandle.h */,
+				152F99BA1800A6B000C3162E /* CanvasMoveConnectionHandle.m */,
+				152F99BB1800A6B000C3162E /* CanvasNewConnectionHandle.h */,
+				152F99BC1800A6B000C3162E /* CanvasNewConnectionHandle.m */,
+			);
+			path = CanvasConnectionHandles;
+			sourceTree = "<group>";
+		};
+		152F99BF1800A6B000C3162E /* CanvasNodeConnections */ = {
+			isa = PBXGroup;
+			children = (
+				152F99C01800A6B000C3162E /* CanvasNodeConnection.h */,
+				152F99C11800A6B000C3162E /* CanvasNodeConnection.m */,
+			);
+			path = CanvasNodeConnections;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		152F99271800A1AE00C3162E /* CollectionCanvasDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152F995D1800A1AE00C3162E /* Build configuration list for PBXNativeTarget "CollectionCanvasDemo" */;
+			buildPhases = (
+				152F99241800A1AE00C3162E /* Sources */,
+				152F99251800A1AE00C3162E /* Frameworks */,
+				152F99261800A1AE00C3162E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollectionCanvasDemo;
+			productName = CollectionCanvasDemo;
+			productReference = 152F99281800A1AE00C3162E /* CollectionCanvasDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		152F994B1800A1AE00C3162E /* CollectionCanvasDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152F99601800A1AE00C3162E /* Build configuration list for PBXNativeTarget "CollectionCanvasDemoTests" */;
+			buildPhases = (
+				152F99481800A1AE00C3162E /* Sources */,
+				152F99491800A1AE00C3162E /* Frameworks */,
+				152F994A1800A1AE00C3162E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				152F99521800A1AE00C3162E /* PBXTargetDependency */,
+			);
+			name = CollectionCanvasDemoTests;
+			productName = CollectionCanvasDemoTests;
+			productReference = 152F994C1800A1AE00C3162E /* CollectionCanvasDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		152F99201800A1AE00C3162E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Julian Krumow";
+				TargetAttributes = {
+					152F99271800A1AE00C3162E = {
+						DevelopmentTeam = UES4ST6CB2;
+					};
+					152F994B1800A1AE00C3162E = {
+						TestTargetID = 152F99271800A1AE00C3162E;
+					};
+				};
+			};
+			buildConfigurationList = 152F99231800A1AE00C3162E /* Build configuration list for PBXProject "CollectionCanvasDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 152F991F1800A1AE00C3162E;
+			productRefGroup = 152F99291800A1AE00C3162E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				152F99271800A1AE00C3162E /* CollectionCanvasDemo */,
+				152F994B1800A1AE00C3162E /* CollectionCanvasDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		152F99261800A1AE00C3162E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F99B41800A6A300C3162E /* Main_iPhone.storyboard in Resources */,
+				152F99B31800A6A300C3162E /* Main_iPad.storyboard in Resources */,
+				152F99AE1800A69400C3162E /* Images.xcassets in Resources */,
+				152F99361800A1AE00C3162E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152F994A1800A1AE00C3162E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F99581800A1AE00C3162E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		152F99241800A1AE00C3162E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F99D31800A6B000C3162E /* CollectionCanvasView.m in Sources */,
+				152F99D11800A6B000C3162E /* CanvasNodeView.m in Sources */,
+				152F99381800A1AE00C3162E /* main.m in Sources */,
+				152F99D21800A6B000C3162E /* CollectionCanvasScrollView.m in Sources */,
+				152F99D41800A6B000C3162E /* CollectionCanvasViewController.m in Sources */,
+				152F99CF1800A6B000C3162E /* CanvasItemView.m in Sources */,
+				152F99D01800A6B000C3162E /* CanvasNodeConnection.m in Sources */,
+				152F99CE1800A6B000C3162E /* CanvasNewConnectionHandle.m in Sources */,
+				152F99AC1800A68900C3162E /* AppDelegate.m in Sources */,
+				152F99CD1800A6B000C3162E /* CanvasMoveConnectionHandle.m in Sources */,
+				152F99CC1800A6B000C3162E /* CanvasConnectionHandle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152F99481800A1AE00C3162E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152F995A1800A1AE00C3162E /* CollectionCanvasDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		152F99521800A1AE00C3162E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152F99271800A1AE00C3162E /* CollectionCanvasDemo */;
+			targetProxy = 152F99511800A1AE00C3162E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		152F99341800A1AE00C3162E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152F99351800A1AE00C3162E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		152F99561800A1AE00C3162E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152F99571800A1AE00C3162E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		152F99AF1800A6A300C3162E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152F99B01800A6A300C3162E /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		152F99B11800A6A300C3162E /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152F99B21800A6A300C3162E /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		152F995B1800A1AE00C3162E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		152F995C1800A1AE00C3162E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		152F995E1800A1AE00C3162E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollectionCanvasDemo/CollectionCanvasDemo-Prefix.pch";
+				INFOPLIST_FILE = "CollectionCanvasDemo/CollectionCanvasDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		152F995F1800A1AE00C3162E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollectionCanvasDemo/CollectionCanvasDemo-Prefix.pch";
+				INFOPLIST_FILE = "CollectionCanvasDemo/CollectionCanvasDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		152F99611800A1AE00C3162E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CollectionCanvasDemo.app/CollectionCanvasDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollectionCanvasDemo/CollectionCanvasDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CollectionCanvasDemoTests/CollectionCanvasDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		152F99621800A1AE00C3162E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CollectionCanvasDemo.app/CollectionCanvasDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollectionCanvasDemo/CollectionCanvasDemo-Prefix.pch";
+				INFOPLIST_FILE = "CollectionCanvasDemoTests/CollectionCanvasDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		152F99231800A1AE00C3162E /* Build configuration list for PBXProject "CollectionCanvasDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152F995B1800A1AE00C3162E /* Debug */,
+				152F995C1800A1AE00C3162E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152F995D1800A1AE00C3162E /* Build configuration list for PBXNativeTarget "CollectionCanvasDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152F995E1800A1AE00C3162E /* Debug */,
+				152F995F1800A1AE00C3162E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152F99601800A1AE00C3162E /* Build configuration list for PBXNativeTarget "CollectionCanvasDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152F99611800A1AE00C3162E /* Debug */,
+				152F99621800A1AE00C3162E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 152F99201800A1AE00C3162E /* Project object */;
+}

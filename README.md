@@ -3,6 +3,9 @@
 [![Version](http://cocoapod-badges.herokuapp.com/v/TBCollectionCanvas/badge.png)](http://cocoadocs.org/docsets/TBCollectionCanvas)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/TBCollectionCanvas/badge.png)](http://cocoadocs.org/docsets/TBCollectionCanvas)
 
+A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, collapsed and expanded.
+
+
 ## Usage
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
