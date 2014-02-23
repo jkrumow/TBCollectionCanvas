@@ -8,15 +8,12 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/tarbrain/TBCollectionCanvas"
   s.license          = 'MIT'
   s.author           = { "Julian Krumow" => "julian.krumow@tarbrain.com" }
-  s.source           = { :git => "git@github.com:tarbrain/TBCollectionCanvas.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/tarbrain/TBCollectionCanvas.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '5.0'
   s.ios.deployment_target = '5.0'
   s.requires_arc = true
 
-  s.source_files = 'Classes'
-  s.resources = 'Assets'
-
-  s.ios.exclude_files = 'Classes/osx'
+  s.source_files = 'Classes/**/*.{h,m}'
   
 end
