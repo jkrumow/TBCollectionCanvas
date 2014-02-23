@@ -1,0 +1,14 @@
+PODS:
+  - TBCollectionCanvas (0.1.1)
+
+DEPENDENCIES:
+  - TBCollectionCanvas (from `../TBCollectionCanvas.podspec`)
+
+EXTERNAL SOURCES:
+  TBCollectionCanvas:
+    :path: ../TBCollectionCanvas.podspec
+
+SPEC CHECKSUMS:
+  TBCollectionCanvas: 16fa4c7e0fda5a6b73ced5a5901588777e1a1f37
+
+COCOAPODS: 0.29.0
