@@ -21,6 +21,7 @@
 		152F99AE1800A69400C3162E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AD1800A69400C3162E /* Images.xcassets */; };
 		152F99B31800A6A300C3162E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99AF1800A6A300C3162E /* Main_iPad.storyboard */; };
 		152F99B41800A6A300C3162E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F99B11800A6A300C3162E /* Main_iPhone.storyboard */; };
+		15EA28FE18BA4ED3008331D1 /* CollectionCanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EA28FD18BA4ED3008331D1 /* CollectionCanvasViewController.m */; };
 		D5450DA96C974916B93D9820 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E0ACEE120949319BEBD787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		152F99AD1800A69400C3162E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		152F99B01800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		152F99B21800A6A300C3162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		15EA28FC18BA4ED3008331D1 /* CollectionCanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCanvasViewController.h; sourceTree = "<group>"; };
+		15EA28FD18BA4ED3008331D1 /* CollectionCanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCanvasViewController.m; sourceTree = "<group>"; };
 		77E0ACEE120949319BEBD787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25B45E94CA8416EABCCC991 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +122,8 @@
 			children = (
 				152F99AA1800A68900C3162E /* AppDelegate.h */,
 				152F99AB1800A68900C3162E /* AppDelegate.m */,
+				15EA28FC18BA4ED3008331D1 /* CollectionCanvasViewController.h */,
+				15EA28FD18BA4ED3008331D1 /* CollectionCanvasViewController.m */,
 				152F99AF1800A6A300C3162E /* Main_iPad.storyboard */,
 				152F99B11800A6A300C3162E /* Main_iPhone.storyboard */,
 				152F99AD1800A69400C3162E /* Images.xcassets */,
@@ -294,6 +299,7 @@
 			files = (
 				152F99381800A1AE00C3162E /* main.m in Sources */,
 				152F99AC1800A68900C3162E /* AppDelegate.m in Sources */,
+				15EA28FE18BA4ED3008331D1 /* CollectionCanvasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
