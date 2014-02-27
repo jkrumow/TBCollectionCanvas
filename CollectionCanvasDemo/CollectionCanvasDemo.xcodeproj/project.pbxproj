@@ -210,9 +210,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Julian Krumow";
 				TargetAttributes = {
-					152F99271800A1AE00C3162E = {
-						DevelopmentTeam = UES4ST6CB2;
-					};
 					152F994B1800A1AE00C3162E = {
 						TestTargetID = 152F99271800A1AE00C3162E;
 					};
