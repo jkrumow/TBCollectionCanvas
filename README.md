@@ -5,6 +5,13 @@
 
 A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, collapsed and expanded.
 
+![Nodes on canvas](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/1_canvas_nodes.png)
+
+![Collapse menu](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/2_canvas_menu_collapse.png)
+
+![Canvas collapsed](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/3_canvas_collapsed.png)
+
+![Expand menu](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/4_canvas_expand.png)
 
 ## Usage
 
