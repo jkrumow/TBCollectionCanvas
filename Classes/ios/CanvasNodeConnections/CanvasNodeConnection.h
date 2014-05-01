@@ -48,7 +48,7 @@
 @property (weak, nonatomic) CanvasNodeView *childNode;
 @property (weak, nonatomic) CanvasMoveConnectionHandle *moveConnectionHandle;
 
-@property (strong, nonatomic) NSString *colorString;
+@property (strong, nonatomic) UIColor *lineColor;
 @property (assign, nonatomic, readonly) CGPoint visibleStartPoint;
 @property (assign, nonatomic, readonly) CGPoint visibleEndPoint;
 

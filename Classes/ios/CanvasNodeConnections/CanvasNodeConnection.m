@@ -74,7 +74,7 @@
 @synthesize childNode = _childNode;
 @synthesize canvasNodeConnectionDelegate;
 @synthesize moveConnectionHandle;
-@synthesize colorString;
+@synthesize lineColor = _lineColor;
 @synthesize visibleStartPoint;
 @synthesize visibleEndPoint;
 @synthesize valid = _valid;
@@ -105,7 +105,7 @@
 #endif
         shapeLayer = [CAShapeLayer layer];   
         shapeLayer.fillColor = [[UIColor clearColor] CGColor];
-        shapeLayer.strokeColor =[[UIColor lightGrayColor] CGColor];
+        shapeLayer.strokeColor = [[UIColor lightGrayColor] CGColor];
         shapeLayer.lineCap = kCALineCapRound;
         shapeLayer.lineWidth = 10.0f;
         shapeLayer.opaque = YES;
@@ -287,6 +287,12 @@
 {
     _childNode = childNode;
     _childIndex = childNode.tag;
+}
+
+- (void)setLineColor:(UIColor *)lineColor
+{
+    _lineColor = lineColor;
+    shapeLayer.strokeColor = [lineColor CGColor];
 }
 
 @end

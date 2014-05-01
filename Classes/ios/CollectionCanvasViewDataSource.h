@@ -58,6 +58,16 @@
 - (CanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
+ Returns a new Connection object for a given Node object.
+ 
+ @param indexPath The index path of the given collection.
+ 
+ @return The CanvasNodeConnection object. Otherwise nil.
+ */
+
+- (CanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
  Returns a set of Connection objects for a given Node object.
  
  Iterates through the set and connects the corresponding CanvasNodeView objects with CanvasNodeConnections.
@@ -67,6 +77,24 @@
  @return The NSArray object with all CanvasNodeConnection objects. Otherwise nil.
  */
 - (NSSet *)connectionsForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  Returns a new connection handle at a specified point
+ *
+ *  @param point The center point of the new connection handle
+ *
+ *  @return The CanvasNewConnectionHandle object
+ */
+- (CanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point;
+
+/**
+ *  Returns a move connection handle at a specified point
+ *
+ *  @param point The center point of the move connection handle
+ *
+ *  @return The CanvasMoveConnectionHandle object
+ */
+- (CanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point;
 
 /**
  Requests a single thumbimage for a CanvasNodeView at a given index path.

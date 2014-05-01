@@ -476,21 +476,20 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
             CanvasNodeView *parentView = _nodeViews[parentTag];
             CanvasNodeView *childView = _nodeViews[childTag];
             
-            // add a new connection and connect both ends.
-            CanvasNodeConnection *canvasNodeConnection = [[CanvasNodeConnection alloc] init];
-            canvasNodeConnection.canvasNodeConnectionDelegate = self;
-            canvasNodeConnection.parentNode = parentView;
-            canvasNodeConnection.childNode = childView;
+            // add a new connection and connect both
+            nodeConnection.canvasNodeConnectionDelegate = self;
+            nodeConnection.parentNode = parentView;
+            nodeConnection.childNode = childView;
             
             // register connection in all three arrays.
-            [parentView.childConnections addObject:canvasNodeConnection];
-            [childView.parentConnections addObject:canvasNodeConnection];
-            [_connections addObject:canvasNodeConnection];
+            [parentView.childConnections addObject:nodeConnection];
+            [childView.parentConnections addObject:nodeConnection];
+            [_connections addObject:nodeConnection];
             
             // set connection attributes.
-            [self addSubview:canvasNodeConnection];
-            [self sendSubviewToBack:canvasNodeConnection];
-            [canvasNodeConnection drawConnection];
+            [self addSubview:nodeConnection];
+            [self sendSubviewToBack:nodeConnection];
+            [nodeConnection drawConnection];
         }
     }
 }
@@ -929,7 +928,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     CGPoint handleCenter = [self convertPoint:nodeView.connectionHandleAncorPoint toView:self];
     
-    CanvasNewConnectionHandle *handle = [[CanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(handleCenter.x - 10.0, handleCenter.y - 10.0, 20.0, 20.0)];
+    CanvasNewConnectionHandle *handle = [self.canvasViewDataSource newHandleForConnectionAtPoint:handleCenter];
     handle.zoomScale = zoomScale;
     handle.nodeView = nodeView;
     handle.delegate = self;
@@ -941,7 +940,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     CGPoint handleCenter = [self convertPoint:connection.visibleEndPoint fromView:connection];
     
-    CanvasMoveConnectionHandle *handle = [[CanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(handleCenter.x - 10.0, handleCenter.y - 10.0, 20.0, 20.0)];
+    CanvasMoveConnectionHandle *handle = [self.canvasViewDataSource moveHandleForConnectionAtPoint:handleCenter];
     handle.zoomScale = zoomScale;
     handle.connection = connection;
     handle.delegate = self;
@@ -1600,9 +1599,10 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     [canvasNewConnectionHandle setHighlighted:YES];
     
     // Add the temporary connection object.
-    _temporaryConnection = [[CanvasNodeConnection alloc] initWithFrame:CGRectZero];
+    CanvasNodeView *parentView = _nodeViews[canvasNewConnectionHandle.tag];
+    _temporaryConnection = [self.canvasViewDataSource newConectionForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
     _temporaryConnection.canvasNodeConnectionDelegate = self;
-    _temporaryConnection.parentNode = _nodeViews[canvasNewConnectionHandle.tag];
+    _temporaryConnection.parentNode = parentView;
     _temporaryConnection.zoomScale = zoomScale;
     [self addSubview:_temporaryConnection];
     
@@ -1675,8 +1675,7 @@ bail:
         CanvasNodeView *parentView = _temporaryConnection.parentNode;
         
         // Add a new valid connection.
-        CGRect frame = CGRectMake(0.0, 0.0, 0.0, 0.0);
-        CanvasNodeConnection *connection = [[CanvasNodeConnection alloc] initWithFrame:frame];
+        CanvasNodeConnection *connection = [self.canvasViewDataSource newConectionForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
         connection.canvasNodeConnectionDelegate = self;
         connection.zoomScale = zoomScale;
         
@@ -1694,11 +1693,7 @@ bail:
         [connection drawConnection];
         
         // Add new invisible handle.
-        CGPoint handleCenter = [self convertPoint:connection.visibleEndPoint fromView:connection];
-        CanvasMoveConnectionHandle *moveHandle = [[CanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(handleCenter.x - 10.0, handleCenter.y - 10.0, 20.0, 20.0)];
-        moveHandle.delegate = self;
-        moveHandle.zoomScale = zoomScale;
-        moveHandle.connection = connection;
+        CanvasMoveConnectionHandle *moveHandle = [self makeMoveConnectionHandleForConnection:connection];
         [_moveHandles addObject:moveHandle];
         
         connection.moveConnectionHandle = moveHandle;

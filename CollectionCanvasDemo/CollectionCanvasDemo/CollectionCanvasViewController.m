@@ -124,9 +124,26 @@
     nodeView.center = CGPointMake(100.0 * (indexPath.row + 1), 100.0 * (indexPath.row + 1));
 }
 
+- (CanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+{
+   CanvasNodeConnection *newConnection = [[CanvasNodeConnection alloc] initWithFrame:CGRectZero];
+    newConnection.lineColor = [UIColor blueColor];
+    return newConnection;
+}
+
 - (NSSet *)connectionsForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+
+- (CanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point
+{
+    return [[CanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
+}
+
+- (CanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point
+{
+    return [[CanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
 - (void)thumbImageForNodeViewAtIndexPath:(NSIndexPath *)indexPath
