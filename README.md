@@ -33,4 +33,3 @@ Julian Krumow, julian.krumow@tarbrain.com
 ## License
 
 TBCollectionCanvas is available under the MIT license. See the LICENSE file for more info.
-
