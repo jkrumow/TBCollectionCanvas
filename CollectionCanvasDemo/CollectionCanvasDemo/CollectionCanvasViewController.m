@@ -104,7 +104,7 @@
 
 -(NSInteger)numberOfNodesInSection:(NSInteger)section
 {
-    return 3;
+    return 5;
 }
 
 - (CanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath
@@ -118,7 +118,7 @@
 - (void)configureNodeView:(CanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath
 {
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 200.0)];
-    contentView.backgroundColor = [UIColor redColor];
+    contentView.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:214.0f/255.0f blue:217.0f/255.0f alpha:1.0f];
     nodeView.contentView = contentView;
     nodeView.backgroundColor = [UIColor grayColor];
     nodeView.center = CGPointMake(100.0 * (indexPath.row + 1), 100.0 * (indexPath.row + 1));
@@ -126,8 +126,8 @@
 
 - (CanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
 {
-   CanvasNodeConnection *newConnection = [[CanvasNodeConnection alloc] initWithFrame:CGRectZero];
-    newConnection.lineColor = [UIColor blueColor];
+    CanvasNodeConnection *newConnection = [[CanvasNodeConnection alloc] initWithFrame:CGRectZero];
+    newConnection.lineColor = [UIColor colorWithRed:230.0f/255.0f green:213.0f/255.0f blue:143.0f/255.0f alpha:1.0f];
     return newConnection;
 }
 
