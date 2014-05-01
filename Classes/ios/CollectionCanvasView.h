@@ -13,6 +13,7 @@
 #import "CanvasNodeView.h"
 #import "CollectionCanvasViewDataSource.h"
 #import "CollectionCanvasViewDelegate.h"
+#import "CollectionCanvasController.h"
 
 @class CollectionCanvasScrollView;
 
@@ -30,6 +31,7 @@
 @property (assign, nonatomic) id<CollectionCanvasViewDelegate> canvasViewDelegate;
 
 @property (weak, nonatomic) CollectionCanvasScrollView *scrollView;
+@property (strong, nonatomic) CollectionCanvasController *canvasController;
 
 @property (assign, nonatomic, readonly, getter=isLockedToSingleTouch) BOOL lockedToSingleTouch;
 
