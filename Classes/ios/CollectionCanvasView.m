@@ -822,25 +822,6 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     return _nodeViews[indexPath.row];
 }
 
-- (void)updateThumbImage:(UIImage *)image forNodeViewAtIndexPath:(NSIndexPath *)indexPath
-{
-    CanvasNodeView *nodeView = nil;
-    
-    nodeView = [self nodeAtIndexPath:indexPath];
-    
-    if (nodeView) {
-        CGPoint center = nodeView.center;
-        
-        // Set thumbnail image.
-        //nodeView.thumbImage = image;
-        
-        // Recenter nodeView after changing size to sie of image.
-        nodeView.center = center;
-        
-        // Redraw connections to correct endPoint and moveHandle position.
-        [nodeView.parentConnections makeObjectsPerformSelector:@selector(drawConnection)];
-    }
-}
 
 #pragma mark - Connection handles
 

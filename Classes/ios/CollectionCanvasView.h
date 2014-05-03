@@ -95,13 +95,6 @@
  */
 - (CanvasNodeView *)nodeAtIndexPath:(NSIndexPath *)indexPath;
 
-/**
- Updates the thumbImage of a CanvasNodeView at a given index path.
- 
- @param image The updated thumb image.
- @param indexPath The index path of the given CanvasNodeView object.
- */
-- (void)updateThumbImage:(UIImage *)image forNodeViewAtIndexPath:(NSIndexPath *)indexPath;
 
 /** @name Controlling the CollectionCanvasView */
 
