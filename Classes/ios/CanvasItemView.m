@@ -73,8 +73,9 @@
                          animations:slideToCenter 
                          completion:nil];
         
-    } else
+    } else {
         [super setCenter:center];
+    }
 }
 
 @end

@@ -213,8 +213,9 @@
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
 {
     NSIndexPath *connectionIndexPath = [self indexPath];
-    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnection:atIndexPath:)])
+    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnection:atIndexPath:)]) {
         [canvasNodeConnectionDelegate removedConnection:self atIndexPath:connectionIndexPath];
+    }
 }
 
 #pragma mark - Selecting
@@ -242,8 +243,9 @@
                          animations:slideToCenter 
                          completion:redrawConnection];
         
-    } else
+    } else  {
         [super setCenter:center];
+    }
 }
 
 - (NSIndexPath *)indexPath

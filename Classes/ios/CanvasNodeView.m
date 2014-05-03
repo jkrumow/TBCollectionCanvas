@@ -79,10 +79,11 @@
 {
     _isSelected = isSelected;
     
-    if (_isSelected)
+    if (_isSelected) {
         self.alpha = 0.5;
-    else
+    } else {
         self.alpha = 1.0;
+    }
 }
 
 - (void)setHighlighted:(BOOL)isHighlighted
@@ -94,32 +95,36 @@
 {
     _isEditing = isEditing;
     
-    if (_isEditing)
+    if (_isEditing) {
         self.backgroundColor = [UIColor yellowColor];
-    else
+    } else {
         self.backgroundColor = [UIColor lightGrayColor];
+    }
 }
 
 - (NSMutableArray *)connectedNodes
 {
-    if (!connectedNodes)
+    if (!connectedNodes) {
         connectedNodes = [[NSMutableArray alloc] init];
+    }
     
     return connectedNodes;
 }
 
 - (NSMutableArray *)parentConnections
 {
-    if (!parentConnections)
+    if (!parentConnections) {
         parentConnections = [[NSMutableArray alloc] init];
+    }
     
     return parentConnections;
 }
 
 - (NSMutableArray *)childConnections
 {
-    if (!childConnections)
+    if (!childConnections) {
         childConnections = [[NSMutableArray alloc] init];
+    }
     
     return childConnections;
 }
@@ -157,32 +162,40 @@
     _touchOffset.width = center.x - location.x;
     _touchOffset.height = center.y - location.y;
     
-    if ([self.delegate canProcessCanvasNodeView:self])
-        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasNodeView:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)]) {
             [self.delegate canvasNodeView:self touchesBegan:touches withEvent:event];
+        }
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasNodeView:self])
-        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesMoved:withEvent:)])
+    if ([self.delegate canProcessCanvasNodeView:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesMoved:withEvent:)]) {
             [self.delegate canvasNodeView:self touchesMoved:touches withEvent:event];
+        }
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasNodeView:self])
-        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasNodeView:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)]) {
             [self.delegate canvasNodeView:self touchesEnded:touches withEvent:event];
+        }
+    }
     
     _touchOffset = CGSizeZero;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasNodeView:self])
-        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasNodeView:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNodeView:touchesBegan:withEvent:)]) {
             [self.delegate canvasNodeView:self touchesCancelled:touches withEvent:event];
+        }
+    }
     
     _touchOffset = CGSizeZero;
 }

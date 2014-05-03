@@ -66,8 +66,9 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
  */
 - (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view
 {
-    if ([self.collectionCanvasView isProcessingViews])
+    if ([self.collectionCanvasView isProcessingViews]) {
         return YES;
+    }
     
     return ([view isKindOfClass:[CollectionCanvasView class]] == NO && [view isKindOfClass:[CanvasNodeConnection class]] == NO);
 }

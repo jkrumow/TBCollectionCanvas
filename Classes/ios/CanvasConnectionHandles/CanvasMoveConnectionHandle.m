@@ -98,32 +98,40 @@
     _touchOffset.width = center.x - location.x;
     _touchOffset.height = center.y - location.y;
     
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self])
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
             [self.delegate canvasMoveConnectionHandle:self touchesBegan:touches withEvent:event];
+        }
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self])
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesMoved:withEvent:)])
+    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesMoved:withEvent:)]) {
             [self.delegate canvasMoveConnectionHandle:self touchesMoved:touches withEvent:event];
+        }
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self])
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
             [self.delegate canvasMoveConnectionHandle:self touchesEnded:touches withEvent:event];
+        }
+    }
     
     _touchOffset = CGSizeZero;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self])
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)])
+    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
             [self.delegate canvasMoveConnectionHandle:self touchesCancelled:touches withEvent:event];
+        }
+    }
     
     _touchOffset = CGSizeZero;
 }
