@@ -79,16 +79,4 @@
  */
 - (CanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point;
 
-/**
- Requests a single thumbimage for a CanvasNodeView at a given index path.
- Just a trigger for an asynchronuous fetch of the image. Return image by calling
- 
- - (void)updateNodeViewAtIndexPath:(NSIndexPath *)indexPath
- 
- on CollectionCanvasView.
- 
- @param indexPath The given index path
- */
-- (void)thumbImageForNodeViewAtIndexPath:(NSIndexPath *)indexPath;
-
 @end

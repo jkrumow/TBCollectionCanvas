@@ -129,11 +129,6 @@
     return [[CanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
-- (void)thumbImageForNodeViewAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
 - (BOOL)isProcessingViews
 {
     return [self.collectionCanvasScrollView.collectionCanvasView isProcessingViews];

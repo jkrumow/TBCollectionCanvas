@@ -751,10 +751,6 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         }
         
         [self sizeCanvasToFit];
-        
-        // Load thumb image.
-        if ([_canvasViewDataSource respondsToSelector:@selector(thumbImageForNodeViewAtIndexPath:)])
-            [_canvasViewDataSource thumbImageForNodeViewAtIndexPath:indexPath];
     }
 }
 
