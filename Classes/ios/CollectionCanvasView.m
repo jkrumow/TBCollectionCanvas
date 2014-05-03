@@ -13,6 +13,8 @@
 #import "CanvasNewConnectionHandle.h"
 #import "CanvasMoveConnectionHandle.h"
 
+NSString * const kInternalInconsistencyException = @"InternalInconsistencyException";
+
 @interface CollectionCanvasView()
 {
     BOOL isInConnectMode;
@@ -378,7 +380,7 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
                     [segmentNodes addObject:nodeView];
                 }
             } else {
-                NSLog(@"### Error: CollectionCanvasView: Internal Inconsistency.###");
+                [NSException raise:kInternalInconsistencyException format:@"### Error: CollectionCanvasView: Internal Inconsistency: nodeView.tag %i not equal to %i", nodeView.tag, i];
             }
         }
     }
