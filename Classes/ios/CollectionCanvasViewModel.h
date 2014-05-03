@@ -1,5 +1,5 @@
 //
-//  CollectionCanvasControllerDelegate.h
+//  CollectionCanvasViewModel.h
 //
 //  Created by Julian Krumow on 02.05.14.
 //
@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CollectionCanvasControllerDelegate <NSObject>
+
+@interface CollectionCanvasViewModel : NSObject
 
 @end
