@@ -1,5 +1,5 @@
 //
-//  CollectionCanvasViewDataSource.h
+//  TBCollectionCanvasViewDataSource.h
 //
 //  Created by julian krumow on 21.08.12.
 //
@@ -10,10 +10,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- This is the data source protocol for the CollectionCanvasView.
+ This is the data source protocol for the TBCollectionCanvasView.
  
  */
-@protocol CollectionCanvasViewDataSource <NSObject>
+@protocol TBCollectionCanvasViewDataSource <NSObject>
 
 /**
  Returns the number of sections on the canvas.
@@ -27,37 +27,37 @@
  
  @param section The given section number
  
- @return The number of CanvasNodeView objects
+ @return The number of TBCanvasNodeView objects
  */
 - (NSInteger)numberOfNodesInSection:(NSInteger)section;
 
 /**
- Returns the CanvasNodeView object with a given index path from the canvas.
+ Returns the TBCanvasNodeView object with a given index path from the canvas.
  
  @param indexPath The given index path
  
- @return The CanvasNodeView object with the corresponding index. Otherwise nil.
+ @return The TBCanvasNodeView object with the corresponding index. Otherwise nil.
  */
-- (CanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
+- (TBCanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  Returns a new Connection object for a given Node object.
  
  @param indexPath The index path of the given collection.
  
- @return The CanvasNodeConnection object. Otherwise nil.
+ @return The TBCanvasNodeConnection object. Otherwise nil.
  */
 
-- (CanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
+- (TBCanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  Returns a set of Connection objects for a given Node object.
  
- Iterates through the set and connects the corresponding CanvasNodeView objects with CanvasNodeConnections.
+ Iterates through the set and connects the corresponding TBCanvasNodeView objects with CanvasNodeConnections.
  
  @param indexPath The index path of the given collection.
  
- @return The NSArray object with all CanvasNodeConnection objects. Otherwise nil.
+ @return The NSArray object with all TBCanvasNodeConnection objects. Otherwise nil.
  */
 - (NSSet *)connectionsForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -66,17 +66,17 @@
  *
  *  @param point The center point of the new connection handle
  *
- *  @return The CanvasNewConnectionHandle object
+ *  @return The TBCanvasNewConnectionHandle object
  */
-- (CanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point;
+- (TBCanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point;
 
 /**
  *  Returns a move connection handle at a specified point
  *
  *  @param point The center point of the move connection handle
  *
- *  @return The CanvasMoveConnectionHandle object
+ *  @return The TBCanvasMoveConnectionHandle object
  */
-- (CanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point;
+- (TBCanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point;
 
 @end

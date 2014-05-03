@@ -1,5 +1,5 @@
 //
-//  CollectionCanvasScrollView.m
+//  TBCollectionCanvasScrollView.m
 //
 //  Created by Julian Krumow on 01.02.12.
 //
@@ -8,12 +8,12 @@
 //
 
 
-#import "CollectionCanvasScrollView.h"
+#import "TBCollectionCanvasScrollView.h"
 
 CGFloat const CONTENT_WIDTH  = 1000.0;
 CGFloat const CONTENT_HEIGHT = 1000.0;
 
-@implementation CollectionCanvasScrollView
+@implementation TBCollectionCanvasScrollView
 
 @synthesize collectionCanvasView = _collectionCanvasView;
 
@@ -30,7 +30,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
         
         self.delegate = self;
         
-        CollectionCanvasView *collectionCanvasView = [[CollectionCanvasView alloc] initWithFrame:CGRectMake(0.0, 0.0, CONTENT_WIDTH, CONTENT_HEIGHT)];
+        TBCollectionCanvasView *collectionCanvasView = [[TBCollectionCanvasView alloc] initWithFrame:CGRectMake(0.0, 0.0, CONTENT_WIDTH, CONTENT_HEIGHT)];
         self.collectionCanvasView = collectionCanvasView;
         self.collectionCanvasView.scrollView = self;
         
@@ -40,7 +40,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
 }
 
 /**
- Forwards the zoomScale to the CollectionCanvasView.
+ Forwards the zoomScale to the TBCollectionCanvasView.
  
  @param scale The zoom scale.
  */
@@ -51,7 +51,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
 }
 
 /**
- Triggers resizing of the CollectionCanvasView.
+ Triggers resizing of the TBCollectionCanvasView.
  
  @param frame The frame rect to set.
  */
@@ -70,7 +70,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
         return YES;
     }
     
-    return ([view isKindOfClass:[CollectionCanvasView class]] == NO && [view isKindOfClass:[CanvasNodeConnection class]] == NO);
+    return ([view isKindOfClass:[TBCollectionCanvasView class]] == NO && [view isKindOfClass:[TBCanvasNodeConnection class]] == NO);
 }
 
 /*

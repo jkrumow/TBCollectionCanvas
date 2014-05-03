@@ -1,5 +1,5 @@
 //
-//  CanvasNodeConnectionBubble.m
+//  TBCanvasNewConnectionHandle.m
 //
 //  Created by Julian Krumow on 11.02.12.
 //
@@ -10,11 +10,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "CanvasNewConnectionHandle.h"
-#import "CanvasNodeView.h"
-#import "CollectionCanvasView.h"
+#import "TBCanvasNewConnectionHandle.h"
+#import "TBCanvasNodeView.h"
+#import "TBCollectionCanvasView.h"
 
-@interface CanvasNewConnectionHandle()
+@interface TBCanvasNewConnectionHandle()
 
 @property (strong, nonatomic) CAShapeLayer *shapeLayer;
 
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CanvasNewConnectionHandle
+@implementation TBCanvasNewConnectionHandle
 
 @synthesize nodeView = _nodeView;
 @synthesize shapeLayer = _shapeLayer;
@@ -89,7 +89,7 @@
     }
 }
 
-- (void)setNodeView:(CanvasNodeView *)nodeView
+- (void)setNodeView:(TBCanvasNodeView *)nodeView
 {
     _nodeView = nodeView;
     self.tag = nodeView.tag;

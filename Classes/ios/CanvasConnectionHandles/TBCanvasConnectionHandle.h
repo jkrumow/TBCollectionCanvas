@@ -1,5 +1,5 @@
 //
-//  CanvasConnectionHandle.h
+//  TBCanvasConnectionHandle.h
 //
 //  Created by julian krumow on 20.12.12.
 //
@@ -8,12 +8,12 @@
 //
 
 
-#import "CanvasItemView.h"
+#import "TBCanvasItemView.h"
 
 /**
  This class represents a handle for connections on the canvas.
  It is an abstract base class and has to be subtyped.
  */
-@interface CanvasConnectionHandle : CanvasItemView
+@interface TBCanvasConnectionHandle : TBCanvasItemView
 
 @end

@@ -1,5 +1,5 @@
 //
-//  CanvasNodeView.m
+//  TBCanvasNodeView.m
 //
 //  Created by Julian Krumow on 24.01.12.
 //
@@ -10,17 +10,17 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "CanvasNodeView.h"
-#import "CollectionCanvasView.h"
+#import "TBCanvasNodeView.h"
+#import "TBCollectionCanvasView.h"
 
-@interface CanvasNodeView()
+@interface TBCanvasNodeView()
 {
     CGFloat scale;
 }
 
 @end
 
-@implementation CanvasNodeView
+@implementation TBCanvasNodeView
 
 @synthesize hasCollapsedSubStructure;
 @synthesize headNodeTag;

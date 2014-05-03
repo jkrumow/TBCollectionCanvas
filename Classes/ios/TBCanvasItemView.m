@@ -1,5 +1,5 @@
 //
-//  CanvasView.m
+//  TBCanvasView.m
 //
 //  Created by Julian Krumow on 10.02.12.
 //
@@ -8,9 +8,9 @@
 //
 
 
-#import "CanvasItemView.h"
+#import "TBCanvasItemView.h"
 
-@implementation CanvasItemView
+@implementation TBCanvasItemView
 
 @synthesize zoomScale;
 @synthesize deltaToCollapsedNode;

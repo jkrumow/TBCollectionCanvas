@@ -1,5 +1,5 @@
 //
-//  CanvasView.h
+//  TBCanvasView.h
 //
 //  Created by Julian Krumow on 10.02.12.
 //
@@ -14,7 +14,7 @@
  This class represents the base class of all subviews on the canvas.
  
  */
-@interface CanvasItemView : UIView
+@interface TBCanvasItemView : UIView
 {
     BOOL _isSelected;
     BOOL _isHighlighted;
@@ -37,21 +37,21 @@
 - (CGPoint)scaledCenter;
 
 /**
- Sets the CanvasNodeView's selected state.
+ Sets the TBCanvasNodeView's selected state.
  
- @param isSelected True when the CanvasNodeView shall be selected.
+ @param isSelected True when the TBCanvasNodeView shall be selected.
  */
 - (void)setSelected:(BOOL)isSelected;
 
 /**
- Sets the CanvasNodeView's highlight state.
+ Sets the TBCanvasNodeView's highlight state.
  
- @param isHighlighted True when the CanvasNodeView shall be highlighted.
+ @param isHighlighted True when the TBCanvasNodeView shall be highlighted.
  */
 - (void)setHighlighted:(BOOL)isHighlighted;
 
 /**
- Sets the center point of the CanvasNodeItem.
+ Sets the center point of the TBCanvasNodeItem.
  Set animated to YES to slide item into place.
  
  @param center   The given CGPoint for the new center point

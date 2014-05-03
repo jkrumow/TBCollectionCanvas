@@ -1,5 +1,5 @@
 //
-//  CanvasMoveConnectionHandle.m
+//  TBCanvasMoveConnectionHandle.m
 //
 //  Created by Julian Krumow on 14.02.12.
 //
@@ -10,10 +10,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "CanvasMoveConnectionHandle.h"
-#import "CollectionCanvasView.h"
+#import "TBCanvasMoveConnectionHandle.h"
+#import "TBCollectionCanvasView.h"
 
-@interface CanvasMoveConnectionHandle()
+@interface TBCanvasMoveConnectionHandle()
 
 @property (strong, nonatomic) CAShapeLayer *shapeLayer;
 
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CanvasMoveConnectionHandle
+@implementation TBCanvasMoveConnectionHandle
 
 @synthesize connection;
 @synthesize shapeLayer = _shapeLayer;
