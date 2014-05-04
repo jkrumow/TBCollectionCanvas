@@ -311,6 +311,7 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
         _scrollView = nil;
         _autoscrollTimer = nil;
         _menuTimer = nil;
+        _menuEnabled = NO;
         
         _viewsTouched = [[NSMutableArray alloc] init];
         _nodeViews = [[NSMutableArray alloc] init];
@@ -380,7 +381,7 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
                     [segmentNodes addObject:nodeView];
                 }
             } else {
-                [NSException raise:kInternalInconsistencyException format:@"### Error: TBCollectionCanvasView: Internal Inconsistency: nodeView.tag %i not equal to %i", nodeView.tag, i];
+                [NSException raise:kInternalInconsistencyException format:@"### Error: TBCollectionCanvasView: Internal Inconsistency: nodeView.tag %li not equal to %li", (long)nodeView.tag, (long)i];
             }
         }
     }
@@ -1473,7 +1474,9 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
     [self collectConnectionsForFullRefresh];
     
-    [self scheduleMenuForItemView:canvasNodeView];
+    if (_menuEnabled) {
+        [self scheduleMenuForItemView:canvasNodeView];
+    }
 }
 
 - (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
