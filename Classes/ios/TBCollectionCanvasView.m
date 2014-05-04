@@ -799,6 +799,11 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             // Delete connection
             [parentConnection.parentNode.childConnections removeObject:parentConnection];
             
+            // Remove move handle
+            TBCanvasMoveConnectionHandle *handle = parentConnection.moveConnectionHandle;
+            [handle removeFromSuperview];
+            [_moveHandles removeObject:handle];
+            
             // Remove connection
             [_connections removeObject:parentConnection];
         }
@@ -810,6 +815,11 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             
             // Delete connection
             [childConnection.childNode.parentConnections removeObject:childConnection];
+            
+            // Remove move handle
+            TBCanvasMoveConnectionHandle *handle = childConnection.moveConnectionHandle;
+            [handle removeFromSuperview];
+            [_moveHandles removeObject:handle];
             
             // Remove connection
             [_connections removeObject:childConnection];
@@ -1538,6 +1548,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         }
         
         if (isInConnectMode) {
+            TBCanvasNewConnectionHandle *handle = _moreHandles[canvasNodeView.tag];
+            handle.center = CGPointMake(canvasNodeView.center.x, canvasNodeView.center.y + (canvasNodeView.frame.size.height / 2.0));
             [self bringSubviewToFront:_moreHandles[canvasNodeView.tag]];
         }
         
@@ -1575,6 +1587,11 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 - (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self moveConnectionsForItemView:canvasNodeView];
+    
+    TBCanvasNewConnectionHandle *handle = _moreHandles[canvasNodeView.tag];
+    handle.center = CGPointMake(canvasNodeView.center.x, canvasNodeView.center.y + (canvasNodeView.frame.size.height / 2.0));
+    [self bringSubviewToFront:_moreHandles[canvasNodeView.tag]];
+    
     [_viewsTouched removeObject:canvasNodeView];
     [_autoscrollingItems removeObject:canvasNodeView];
 }
