@@ -1,5 +1,5 @@
 //
-//  CanvasConnectionHandle.m
+//  TBCanvasConnectionHandle.m
 //
 //  Created by julian krumow on 20.12.12.
 //
@@ -8,9 +8,9 @@
 //
 
 
-#import "CanvasConnectionHandle.h"
+#import "TBCanvasConnectionHandle.h"
 
-@implementation CanvasConnectionHandle
+@implementation TBCanvasConnectionHandle
 
 #define EXCEPTION_TEXT @"is an abstract class. You must implement a subtype of this class."
 
@@ -38,8 +38,8 @@
 
 - (void)checkInheritance
 {
-    if ([self isMemberOfClass:[CanvasConnectionHandle class]]) {
-        NSString *reason = [NSString stringWithFormat:@"%@ %@", EXCEPTION_TEXT, [self class]];
+    if ([self isMemberOfClass:[TBCanvasConnectionHandle class]]) {
+        NSString *reason = [NSString stringWithFormat:@"%@ %@", [self class], EXCEPTION_TEXT];
         @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
     }
 }

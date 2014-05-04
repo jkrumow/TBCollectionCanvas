@@ -12,23 +12,19 @@
 @interface CollectionCanvasViewController()
 
 /**
- Configures a CanvasNodeView object for the given location on the CollectionCanvasView.
+ Configures a TBCanvasNodeView object for the given location on the TBCollectionCanvasView.
  
- @param nodeView The given CanvasNodeView object to configure.
- @param indexPath The given location of the CanvasNodeView.
+ @param nodeView The given TBCanvasNodeView object to configure.
+ @param indexPath The given location of the TBCanvasNodeView.
  */
-- (void)configureNodeView:(CanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureNodeView:(TBCanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 
 @implementation CollectionCanvasViewController
 
-@synthesize delegate = _delegate;
-@synthesize collectionCanvasScrollView = _collectionCanvasScrollView;
-
-
-- (void)setCollectionCanvasScrollView:(CollectionCanvasScrollView *)collectionCanvasScrollView
+- (void)setCollectionCanvasScrollView:(TBCollectionCanvasScrollView *)collectionCanvasScrollView
 {
     _collectionCanvasScrollView = collectionCanvasScrollView;
     _collectionCanvasScrollView.contentSize = CGSizeMake(CONTENT_WIDTH, CONTENT_HEIGHT);
@@ -78,7 +74,7 @@
     [self.collectionCanvasScrollView.collectionCanvasView sizeCanvasToFit];
 }
 
-#pragma mark - CollectionCanvasViewDataSource
+#pragma mark - TBCollectionCanvasViewDataSource
 
 - (NSInteger)numberOfSectionsOnCanvas
 {
@@ -90,15 +86,15 @@
     return 5;
 }
 
-- (CanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (TBCanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath
 {
-    CanvasNodeView *nodeView = [[CanvasNodeView alloc] initWithFrame:CGRectZero];
+    TBCanvasNodeView *nodeView = [[TBCanvasNodeView alloc] initWithFrame:CGRectZero];
     nodeView.tag = indexPath.row;
     [self configureNodeView:nodeView atIndexPath:indexPath];
     return nodeView;
 }
 
-- (void)configureNodeView:(CanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath
+- (void)configureNodeView:(TBCanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath
 {
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 200.0)];
     contentView.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:214.0f/255.0f blue:217.0f/255.0f alpha:1.0f];
@@ -107,9 +103,9 @@
     nodeView.center = CGPointMake(100.0 * (indexPath.row + 1), 100.0 * (indexPath.row + 1));
 }
 
-- (CanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (TBCanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
 {
-    CanvasNodeConnection *newConnection = [[CanvasNodeConnection alloc] initWithFrame:CGRectZero];
+    TBCanvasNodeConnection *newConnection = [[TBCanvasNodeConnection alloc] initWithFrame:CGRectZero];
     newConnection.lineColor = [UIColor colorWithRed:230.0f/255.0f green:213.0f/255.0f blue:143.0f/255.0f alpha:1.0f];
     return newConnection;
 }
@@ -119,19 +115,14 @@
     return nil;
 }
 
-- (CanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point
 {
-    return [[CanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
+    return [[TBCanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
-- (CanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point
 {
-    return [[CanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
-}
-
-- (void)thumbImageForNodeViewAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+    return [[TBCanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
 - (BOOL)isProcessingViews

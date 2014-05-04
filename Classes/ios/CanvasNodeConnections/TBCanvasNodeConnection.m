@@ -1,5 +1,5 @@
 //
-//  CanvasNodeConnection.m
+//  TBCanvasNodeConnection.m
 //
 //  Created by Julian Krumow on 29.01.12.
 //
@@ -7,10 +7,10 @@
 //
 //
 
-#import "CanvasNodeConnection.h"
-#import "CanvasNodeView.h"
+#import "TBCanvasNodeConnection.h"
+#import "TBCanvasNodeView.h"
 
-@interface CanvasNodeConnection()
+@interface TBCanvasNodeConnection()
 {
     CAShapeLayer *shapeLayer;
 }
@@ -36,20 +36,20 @@
 - (CGPoint)calculateEndPointForLineFrom:(CGPoint)start toPoint:(CGPoint)end;
 
 /**
- Calculates the offset between the center point a given CanvasNodeView and the intersection point with a given connection.
+ Calculates the offset between the center point a given TBCanvasNodeView and the intersection point with a given connection.
  
  @param start    The starting point of the connection
  @param end      The ending point of the connection
- @param nodeView The CanvasNodeView at either end.
+ @param nodeView The TBCanvasNodeView at either end.
  
- @return The offset between the center of the given CanvasNodeView and the intersection point.
+ @return The offset between the center of the given TBCanvasNodeView and the intersection point.
  */
-- (CGSize)calculateIntersectionOffsetForLineFrom:(CGPoint)start toPoint:(CGPoint)end forNodeView:(CanvasNodeView *)nodeView;
+- (CGSize)calculateIntersectionOffsetForLineFrom:(CGPoint)start toPoint:(CGPoint)end forNodeView:(TBCanvasNodeView *)nodeView;
 
 @end
 
 
-@implementation CanvasNodeConnection
+@implementation TBCanvasNodeConnection
 
 @synthesize parentIndex = _parentIndex;
 @synthesize childIndex = _childIndex;
@@ -133,7 +133,7 @@
     [self setNeedsDisplay];
 }
 
-- (CGSize)calculateIntersectionOffsetForLineFrom:(CGPoint)start toPoint:(CGPoint)end forNodeView:(CanvasNodeView *)nodeView
+- (CGSize)calculateIntersectionOffsetForLineFrom:(CGPoint)start toPoint:(CGPoint)end forNodeView:(TBCanvasNodeView *)nodeView
 {
     CGFloat largeX = end.x - start.x;
     CGFloat largeY = end.y - start.y;
@@ -213,8 +213,9 @@
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
 {
     NSIndexPath *connectionIndexPath = [self indexPath];
-    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnection:atIndexPath:)])
+    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnection:atIndexPath:)]) {
         [canvasNodeConnectionDelegate removedConnection:self atIndexPath:connectionIndexPath];
+    }
 }
 
 #pragma mark - Selecting
@@ -242,8 +243,9 @@
                          animations:slideToCenter 
                          completion:redrawConnection];
         
-    } else
+    } else  {
         [super setCenter:center];
+    }
 }
 
 - (NSIndexPath *)indexPath
@@ -260,13 +262,13 @@
     return isValid;
 }
 
-- (void)setParentNode:(CanvasNodeView *)parentNode
+- (void)setParentNode:(TBCanvasNodeView *)parentNode
 {
     _parentNode = parentNode;
     _parentIndex = parentNode.tag;
 }
 
-- (void)setChildNode:(CanvasNodeView *)childNode
+- (void)setChildNode:(TBCanvasNodeView *)childNode
 {
     _childNode = childNode;
     _childIndex = childNode.tag;

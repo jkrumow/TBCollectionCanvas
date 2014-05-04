@@ -1,5 +1,5 @@
 //
-//  CanvasNodeView.h
+//  TBCanvasNodeView.h
 //
 //  Created by Julian Krumow on 24.01.12.
 //
@@ -10,24 +10,24 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CanvasItemView.h"
-#import "CanvasNodeConnection.h"
-#import "CanvasNewConnectionHandle.h"
+#import "TBCanvasItemView.h"
+#import "TBCanvasNodeConnection.h"
+#import "TBCanvasNewConnectionHandle.h"
 
 @protocol CanvasNodeViewDelegate;
-@class CollectionCanvasView;
+@class TBCollectionCanvasView;
 
 /**
  This class represents a node view on the canvas.
  
  */
-@interface CanvasNodeView : CanvasItemView
+@interface TBCanvasNodeView : TBCanvasItemView
 
 @property (assign, nonatomic) BOOL hasCollapsedSubStructure;
 @property (assign, nonatomic) NSInteger headNodeTag;
 
-@property (weak, nonatomic) CollectionCanvasView <CanvasNodeViewDelegate> *delegate;
-@property (weak, nonatomic) CanvasNewConnectionHandle *connectionHandle;
+@property (weak, nonatomic) TBCollectionCanvasView <CanvasNodeViewDelegate> *delegate;
+@property (weak, nonatomic) TBCanvasNewConnectionHandle *connectionHandle;
 
 @property (strong, nonatomic) NSMutableArray *connectedNodes;
 @property (strong, nonatomic) NSMutableArray *parentConnections;
@@ -46,14 +46,14 @@
 /**
  Sets the CanvasNodeView's selected state.
  
- @param isSelected True when the CanvasNodeView shall be selected.
+ @param isSelected True when the TBCanvasNodeView shall be selected.
  */
 - (void)setSelected:(BOOL)isSelected;
 
 /**
  Sets the CanvasNodeView's editing state.
  
- @param isEditing True when the CanvasNodeView shall switch to edit view.
+ @param isEditing True when the TBCanvasNodeView shall switch to edit view.
  */
 - (void)setEditing:(BOOL)isEditing;
 
@@ -67,52 +67,52 @@
 @end
 
 /**
- This protocol is used by the CanvasNodeView to communicate its state.
+ This protocol is used by the TBCanvasNodeView to communicate its state.
  */
 @protocol CanvasNodeViewDelegate <NSObject>
 
 /**
  Return `YES` when the receiver is locked down to single touch processing.
  
- @param canvasNodeView The given CanvasNodeView
+ @param canvasNodeView The given TBCanvasNodeView
  @return `YES` when the receiver is locked down to single touch processing.
  */
-- (BOOL)canProcessCanvasNodeView:(CanvasNodeView *)canvasNodeView;
+- (BOOL)canProcessCanvasNodeView:(TBCanvasNodeView *)canvasNodeView;
 
 /**
- A CanvasNodeView has been touched.
+ A TBCanvasNodeView has been touched.
  
- @param canvasNodeView The given CanvasNodeView
+ @param canvasNodeView The given TBCanvasNodeView
  @param touches        The touches
  @param event          The event
  */
-- (void)canvasNodeView:(CanvasNodeView *)canvasNodeView touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
- A CanvasNodeView has been moved.
+ A TBCanvasNodeView has been moved.
  
- @param canvasNodeView The given CanvasNodeView
+ @param canvasNodeView The given TBCanvasNodeView
  @param touches        The touches
  @param event          The event
  */
-- (void)canvasNodeView:(CanvasNodeView *)canvasNodeView touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
- Touching a CanvasNodeView has ended.
+ Touching a TBCanvasNodeView has ended.
  
- @param canvasNodeView The given CanvasNodeView
+ @param canvasNodeView The given TBCanvasNodeView
  @param touches        The touches
  @param event          The event
  */
-- (void)canvasNodeView:(CanvasNodeView *)canvasNodeView touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
- Touching a CanvasNodeView has been cancelled.
+ Touching a TBCanvasNodeView has been cancelled.
  
- @param canvasNodeView The given CanvasNodeView
+ @param canvasNodeView The given TBCanvasNodeView
  @param touches        The touches
  @param event          The event
  */
-- (void)canvasNodeView:(CanvasNodeView *)canvasNodeView touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
