@@ -56,6 +56,7 @@
     
     [self loadCanvas];
     [self toggleConnectMode];
+    self.collectionCanvasScrollView.collectionCanvasView.menuEnabled = YES;
     self.collectionCanvasScrollView.zoomScale = 0.5;
 }
 

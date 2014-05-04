@@ -33,6 +33,8 @@
 @property (weak, nonatomic) TBCollectionCanvasScrollView *scrollView;
 @property (strong, nonatomic) TBCollectionCanvasController *canvasController;
 
+@property (assign, nonatomic, getter = isMenuEnabled) BOOL menuEnabled;
+
 @property (assign, nonatomic, readonly, getter=isLockedToSingleTouch) BOOL lockedToSingleTouch;
 
 /** @name Managing the CollectionCanvasView's content */
