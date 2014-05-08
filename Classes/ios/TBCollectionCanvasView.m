@@ -327,6 +327,8 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
         
         self.viewWithMenu = nil;
         self.menuController = [UIMenuController sharedMenuController];
+        
+        self.canvasController = [[TBCollectionCanvasController alloc] initWithCanvasView:self];
     }
     return self;
 }
@@ -369,6 +371,8 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
                 }
                 
                 [_nodeViews addObject:nodeView];
+                [self.canvasController registerNodeView:nodeView];
+                
                 [self addSubview:nodeView];
                 
                 // Collect headnodes.
@@ -390,7 +394,7 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
     
     [self ticktockSegment:segmentNodes];
     
-    // Bring headnodes to fromt - descending - parent first.
+    // Bring headnodes to front - descending - parent first.
     for (NSInteger i=headNodes.count-1; i>=0; i--) {
         [self bringSubviewToFront:(UIView *)headNodes[i]];
     }
