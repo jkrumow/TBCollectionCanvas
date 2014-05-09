@@ -1,5 +1,5 @@
 //
-//  TBCanvasNodeConnection.m
+//  TBCanvasConnectionView.m
 //
 //  Created by Julian Krumow on 29.01.12.
 //
@@ -7,10 +7,10 @@
 //
 //
 
-#import "TBCanvasNodeConnection.h"
+#import "TBCanvasConnectionView.h"
 #import "TBCanvasNodeView.h"
 
-@interface TBCanvasNodeConnection()
+@interface TBCanvasConnectionView()
 {
     CAShapeLayer *shapeLayer;
 }
@@ -49,7 +49,7 @@
 @end
 
 
-@implementation TBCanvasNodeConnection
+@implementation TBCanvasConnectionView
 
 @synthesize parentIndex = _parentIndex;
 @synthesize childIndex = _childIndex;

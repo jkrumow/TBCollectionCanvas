@@ -70,7 +70,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
         return YES;
     }
     
-    return ([view isKindOfClass:[TBCollectionCanvasView class]] == NO && [view isKindOfClass:[TBCanvasNodeConnection class]] == NO);
+    return ([view isKindOfClass:[TBCollectionCanvasView class]] == NO && [view isKindOfClass:[TBCanvasConnectionView class]] == NO);
 }
 
 /*

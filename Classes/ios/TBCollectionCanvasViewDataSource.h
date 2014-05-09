@@ -45,10 +45,10 @@
  
  @param indexPath The index path of the given collection.
  
- @return The TBCanvasNodeConnection object. Otherwise nil.
+ @return The TBCanvasConnectionView object. Otherwise nil.
  */
 
-- (TBCanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
+- (TBCanvasConnectionView *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  Returns a set of Connection objects for a given Node object.
@@ -57,7 +57,7 @@
  
  @param indexPath The index path of the given collection.
  
- @return The NSArray object with all TBCanvasNodeConnection objects. Otherwise nil.
+ @return The NSArray object with all TBCanvasConnectionView objects. Otherwise nil.
  */
 - (NSSet *)connectionsForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -66,17 +66,17 @@
  *
  *  @param point The center point of the new connection handle
  *
- *  @return The TBCanvasNewConnectionHandle object
+ *  @return The TBCanvasCreateHandleView object
  */
-- (TBCanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point;
+- (TBCanvasCreateHandleView *)newHandleForConnectionAtPoint:(CGPoint)point;
 
 /**
  *  Returns a move connection handle at a specified point
  *
  *  @param point The center point of the move connection handle
  *
- *  @return The TBCanvasMoveConnectionHandle object
+ *  @return The TBCanvasMoveHandleView object
  */
-- (TBCanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point;
+- (TBCanvasMoveHandleView *)moveHandleForConnectionAtPoint:(CGPoint)point;
 
 @end
