@@ -19,7 +19,7 @@
 /**
  This class represents a handle to draw connection between items on the canvas.
  */
-@interface TBCanvasNewConnectionHandle : TBCanvasConnectionHandle
+@interface TBCanvasNewConnectionHandle : TBCanvasItemView
 
 @property (weak, nonatomic) TBCollectionCanvasView <CanvasNewConnectionHandleDelegate> *delegate;
 @property (weak, nonatomic) TBCanvasNodeView *nodeView;

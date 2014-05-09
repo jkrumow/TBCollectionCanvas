@@ -20,7 +20,7 @@
  This class represents a handle to move a connection on the canvas.
  It is transparent and hovers above the tip of the connection pointing to the child view.
  */
-@interface TBCanvasMoveConnectionHandle : TBCanvasConnectionHandle
+@interface TBCanvasMoveConnectionHandle : TBCanvasItemView
 
 @property (weak, nonatomic) TBCollectionCanvasView <CanvasMoveConnectionHandleDelegate> *delegate;
 @property (weak, nonatomic) TBCanvasNodeConnection *connection;

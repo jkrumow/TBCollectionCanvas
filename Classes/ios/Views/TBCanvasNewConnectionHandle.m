@@ -24,7 +24,7 @@
 
 @implementation TBCanvasNewConnectionHandle
 
-@synthesize nodeView = _nodeView;
+//@synthesize nodeView = _nodeView;
 @synthesize shapeLayer = _shapeLayer;
 @synthesize touchOffset = _touchOffset;
 @synthesize delegate;
