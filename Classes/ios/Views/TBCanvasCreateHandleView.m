@@ -12,7 +12,7 @@
 
 #import "TBCanvasCreateHandleView.h"
 #import "TBCanvasNodeView.h"
-#import "TBCollectionCanvasView.h"
+#import "TBCollectionCanvasContentView.h"
 
 @interface TBCanvasCreateHandleView()
 

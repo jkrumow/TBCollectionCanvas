@@ -10,21 +10,21 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TBCollectionCanvasScrollView.h"
+#import "TBCollectionCanvasView.h"
 
 
 /**
- This class represents the view controller for a TBCollectionCanvasView.
+ This class represents the view controller for a TBCollectionCanvasContentView.
  
  */
-@interface CollectionCanvasViewController : UIViewController <TBCollectionCanvasViewDataSource, TBCollectionCanvasViewDelegate>
+@interface CollectionCanvasViewController : UIViewController <TBCollectionCanvasContentViewDataSource, TBCollectionCanvasContentViewDelegate>
 
-@property (weak, nonatomic) IBOutlet TBCollectionCanvasScrollView *collectionCanvasScrollView;
+@property (weak, nonatomic) IBOutlet TBCollectionCanvasView *collectionCanvasScrollView;
 
 /**
- Returns `YES` if the TBCollectionCanvasView is processing items.
+ Returns `YES` if the TBCollectionCanvasContentView is processing items.
  
- @return `YES`if the TBCollectionCanvasView is processing items.
+ @return `YES`if the TBCollectionCanvasContentView is processing items.
  */
 - (BOOL)isProcessingViews;
 
@@ -34,7 +34,7 @@
 - (void)loadCanvas;
 
 /**
- Toggles connect mode on the TBCollectionCanvasView.
+ Toggles connect mode on the TBCollectionCanvasContentView.
  */
 - (void)toggleConnectMode;
 

@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "TBCanvasMoveHandleView.h"
-#import "TBCollectionCanvasView.h"
+#import "TBCollectionCanvasContentView.h"
 
 @interface TBCanvasMoveHandleView()
 

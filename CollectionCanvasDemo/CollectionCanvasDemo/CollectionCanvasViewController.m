@@ -12,7 +12,7 @@
 @interface CollectionCanvasViewController()
 
 /**
- Configures a TBCanvasNodeView object for the given location on the TBCollectionCanvasView.
+ Configures a TBCanvasNodeView object for the given location on the TBCollectionCanvasContentView.
  
  @param nodeView The given TBCanvasNodeView object to configure.
  @param indexPath The given location of the TBCanvasNodeView.
@@ -24,7 +24,7 @@
 
 @implementation CollectionCanvasViewController
 
-- (void)setCollectionCanvasScrollView:(TBCollectionCanvasScrollView *)collectionCanvasScrollView
+- (void)setCollectionCanvasScrollView:(TBCollectionCanvasView *)collectionCanvasScrollView
 {
     _collectionCanvasScrollView = collectionCanvasScrollView;
     _collectionCanvasScrollView.contentSize = CGSizeMake(CONTENT_WIDTH, CONTENT_HEIGHT);
@@ -75,7 +75,7 @@
     [self.collectionCanvasScrollView.collectionCanvasView sizeCanvasToFit];
 }
 
-#pragma mark - TBCollectionCanvasViewDataSource
+#pragma mark - TBCollectionCanvasContentViewDataSource
 
 - (NSInteger)numberOfSectionsOnCanvas
 {

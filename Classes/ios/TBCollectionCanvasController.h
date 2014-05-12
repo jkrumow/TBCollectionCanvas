@@ -11,13 +11,13 @@
 
 #import "TBCollectionCanvasControllerDelegate.h"
 
-@class TBCollectionCanvasView;
+@class TBCollectionCanvasContentView;
 @class TBCanvasNodeView;
 @interface TBCollectionCanvasController : NSObject
 
-@property (nonatomic, weak)TBCollectionCanvasView *canvasView;
+@property (nonatomic, weak)TBCollectionCanvasContentView *canvasView;
 
-- (instancetype)initWithCanvasView:(TBCollectionCanvasView *)canvasView;
+- (instancetype)initWithCanvasView:(TBCollectionCanvasContentView *)canvasView;
 
 - (void)registerNodeView:(TBCanvasNodeView *)nodeView;
 

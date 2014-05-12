@@ -1,5 +1,5 @@
 //
-//  TBCollectionCanvasViewDataSource.h
+//  TBCollectionCanvasContentViewDataSource.h
 //
 //  Created by julian krumow on 21.08.12.
 //
@@ -10,10 +10,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- This is the data source protocol for the TBCollectionCanvasView.
+ This is the data source protocol for the TBCollectionCanvasContentView.
  
  */
-@protocol TBCollectionCanvasViewDataSource <NSObject>
+@protocol TBCollectionCanvasContentViewDataSource <NSObject>
 
 /**
  Returns the number of sections on the canvas.

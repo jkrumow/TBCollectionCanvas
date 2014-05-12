@@ -9,10 +9,9 @@
 
 
 #import "TBCanvasItemView.h"
-#import "TBCanvasConnectionHandle.h"
 
 @class TBCanvasNodeView;
-@class TBCollectionCanvasView;
+@class TBCollectionCanvasContentView;
 
 @protocol CanvasNewConnectionHandleDelegate;
 
@@ -21,7 +20,7 @@
  */
 @interface TBCanvasCreateHandleView : TBCanvasItemView
 
-@property (weak, nonatomic) TBCollectionCanvasView <CanvasNewConnectionHandleDelegate> *delegate;
+@property (weak, nonatomic) TBCollectionCanvasContentView <CanvasNewConnectionHandleDelegate> *delegate;
 @property (weak, nonatomic) TBCanvasNodeView *nodeView;
 
 @end

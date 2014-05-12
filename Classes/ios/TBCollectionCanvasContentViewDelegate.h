@@ -1,5 +1,5 @@
 //
-//  TBCollectionCanvasViewDelegate.h
+//  TBCollectionCanvasContentViewDelegate.h
 //
 //  Created by julian krumow on 21.08.12.
 //
@@ -10,10 +10,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- This is the delegate protocol for the TBCollectionCanvasView.
+ This is the delegate protocol for the TBCollectionCanvasContentView.
  
  */
-@protocol TBCollectionCanvasViewDelegate <NSObject>
+@protocol TBCollectionCanvasContentViewDelegate <NSObject>
 
 @optional
 

@@ -8,14 +8,14 @@
 //
 
 #import "TBCollectionCanvasController.h"
-#import "TBCollectionCanvasView.h"
+#import "TBCollectionCanvasContentView.h"
 
 static void *canvasControllerContext = &canvasControllerContext;
 static NSString *nodeViewCenter = @"center";
 
 @implementation TBCollectionCanvasController
 
-- (instancetype)initWithCanvasView:(TBCollectionCanvasView *)canvasView
+- (instancetype)initWithCanvasView:(TBCollectionCanvasContentView *)canvasView
 {
     self = [super init];
     if (self) {

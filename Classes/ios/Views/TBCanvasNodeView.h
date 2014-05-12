@@ -15,7 +15,7 @@
 #import "TBCanvasCreateHandleView.h"
 
 @protocol CanvasNodeViewDelegate;
-@class TBCollectionCanvasView;
+@class TBCollectionCanvasContentView;
 
 /**
  This class represents a node view on the canvas.
@@ -26,7 +26,7 @@
 @property (assign, nonatomic) BOOL hasCollapsedSubStructure;
 @property (assign, nonatomic) NSInteger headNodeTag;
 
-@property (weak, nonatomic) TBCollectionCanvasView <CanvasNodeViewDelegate> *delegate;
+@property (weak, nonatomic) TBCollectionCanvasContentView <CanvasNodeViewDelegate> *delegate;
 @property (weak, nonatomic) TBCanvasCreateHandleView *connectionHandle;
 
 @property (strong, nonatomic) NSMutableArray *connectedNodes;
