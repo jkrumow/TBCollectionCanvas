@@ -1,7 +1,7 @@
 //
-//  TBCanvasMoveConnectionHandle.m
+//  TBCanvasCreateHandleView.m
 //
-//  Created by Julian Krumow on 14.02.12.
+//  Created by Julian Krumow on 11.02.12.
 //
 //  Copyright (c) 2012 Julian Krumow ()
 //
@@ -10,10 +10,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "TBCanvasMoveConnectionHandle.h"
+#import "TBCanvasCreateHandleView.h"
+#import "TBCanvasNodeView.h"
 #import "TBCollectionCanvasView.h"
 
-@interface TBCanvasMoveConnectionHandle()
+@interface TBCanvasCreateHandleView()
 
 @property (strong, nonatomic) CAShapeLayer *shapeLayer;
 
@@ -21,9 +22,9 @@
 
 @end
 
-@implementation TBCanvasMoveConnectionHandle
+@implementation TBCanvasCreateHandleView
 
-@synthesize connection;
+//@synthesize nodeView = _nodeView;
 @synthesize shapeLayer = _shapeLayer;
 @synthesize touchOffset = _touchOffset;
 @synthesize delegate;
@@ -42,8 +43,8 @@
         layer.opaque = YES;
         
         self.shapeLayer = [CAShapeLayer layer];
-        self.shapeLayer.fillColor = [[UIColor purpleColor] CGColor];
-        self.shapeLayer.strokeColor = [[UIColor purpleColor] CGColor];
+        self.shapeLayer.fillColor = [[UIColor grayColor] CGColor];
+        self.shapeLayer.strokeColor = [[UIColor darkGrayColor] CGColor];
         self.shapeLayer.lineWidth = 2.0f;
         self.shapeLayer.opaque = YES;
         [layer addSublayer:self.shapeLayer];
@@ -83,9 +84,15 @@
         
         [UIView commitAnimations];
     } else {
-        self.shapeLayer.fillColor = [[UIColor purpleColor] CGColor];
+        self.shapeLayer.fillColor = [[UIColor grayColor] CGColor];
         self.transform = CGAffineTransformIdentity;
     }
+}
+
+- (void)setNodeView:(TBCanvasNodeView *)nodeView
+{
+    _nodeView = nodeView;
+    self.tag = nodeView.tag;
 }
 
 #pragma mark - Touch handling
@@ -98,27 +105,27 @@
     _touchOffset.width = center.x - location.x;
     _touchOffset.height = center.y - location.y;
     
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
-            [self.delegate canvasMoveConnectionHandle:self touchesBegan:touches withEvent:event];
+    if ([self.delegate canProcessCanvasNewConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNewConnectionHandle:touchesBegan:withEvent:)]) {
+            [self.delegate canvasNewConnectionHandle:self touchesBegan:touches withEvent:event];
         }
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesMoved:withEvent:)]) {
-            [self.delegate canvasMoveConnectionHandle:self touchesMoved:touches withEvent:event];
+    if ([self.delegate canProcessCanvasNewConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNewConnectionHandle:touchesMoved:withEvent:)]) {
+            [self.delegate canvasNewConnectionHandle:self touchesMoved:touches withEvent:event];
         }
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
-            [self.delegate canvasMoveConnectionHandle:self touchesEnded:touches withEvent:event];
+    if ([self.delegate canProcessCanvasNewConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNewConnectionHandle:touchesBegan:withEvent:)]) {
+            [self.delegate canvasNewConnectionHandle:self touchesEnded:touches withEvent:event];
         }
     }
     
@@ -127,9 +134,9 @@
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([self.delegate canProcessCanvasMoveConnectionHandle:self]) {
-        if ([self.delegate respondsToSelector:@selector(canvasMoveConnectionHandle:touchesBegan:withEvent:)]) {
-            [self.delegate canvasMoveConnectionHandle:self touchesCancelled:touches withEvent:event];
+    if ([self.delegate canProcessCanvasNewConnectionHandle:self]) {
+        if ([self.delegate respondsToSelector:@selector(canvasNewConnectionHandle:touchesBegan:withEvent:)]) {
+            [self.delegate canvasNewConnectionHandle:self touchesCancelled:touches withEvent:event];
         }
     }
     

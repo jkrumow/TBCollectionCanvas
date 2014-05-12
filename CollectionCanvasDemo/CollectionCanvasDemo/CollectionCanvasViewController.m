@@ -104,9 +104,9 @@
     nodeView.center = CGPointMake(100.0 * (indexPath.row + 1), 100.0 * (indexPath.row + 1));
 }
 
-- (TBCanvasNodeConnection *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (TBCanvasConnectionView *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
 {
-    TBCanvasNodeConnection *newConnection = [[TBCanvasNodeConnection alloc] initWithFrame:CGRectZero];
+    TBCanvasConnectionView *newConnection = [[TBCanvasConnectionView alloc] initWithFrame:CGRectZero];
     newConnection.lineColor = [UIColor colorWithRed:230.0f/255.0f green:213.0f/255.0f blue:143.0f/255.0f alpha:1.0f];
     return newConnection;
 }
@@ -116,14 +116,14 @@
     return nil;
 }
 
-- (TBCanvasMoveConnectionHandle *)moveHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasMoveHandleView *)moveHandleForConnectionAtPoint:(CGPoint)point
 {
-    return [[TBCanvasMoveConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
+    return [[TBCanvasMoveHandleView alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
-- (TBCanvasNewConnectionHandle *)newHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasCreateHandleView *)newHandleForConnectionAtPoint:(CGPoint)point
 {
-    return [[TBCanvasNewConnectionHandle alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
+    return [[TBCanvasCreateHandleView alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
 - (BOOL)isProcessingViews

@@ -106,14 +106,14 @@
 /**
  A connection has been removed between two nodes on the canvas view.
  
- @param indexPath The index path of the parent TBCanvasNodeConnection object.
+ @param indexPath The index path of the parent TBCanvasConnectionView object.
  */
 - (void)didRemoveConnectionAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  A connection has been moved between two child nodes on the canvas view.
  
- @param indexPath The index path of the parent TBCanvasNodeConnection object.
+ @param indexPath The index path of the parent TBCanvasConnectionView object.
  @param newChildIndexPath The index path of the new child TBCanvasNodeView object.
  */
 - (void)didMoveConnectionAtNode:(NSIndexPath *)indexPath toNewChildIndexPath:(NSIndexPath *)newChildIndexPath;
@@ -121,9 +121,9 @@
 /**
  Attributes of a connection have been changed.
  
- @param indexPath  The index path of the TBCanvasNodeConnection object.
- @param connection The changed TBCanvasNodeConnection object.
+ @param indexPath  The index path of the TBCanvasConnectionView object.
+ @param connection The changed TBCanvasConnectionView object.
  */
-- (void)didChangeAttributesForConnectionAtIndexPath:(NSIndexPath *)indexPath connectionView:(TBCanvasNodeConnection *)connection;
+- (void)didChangeAttributesForConnectionAtIndexPath:(NSIndexPath *)indexPath connectionView:(TBCanvasConnectionView *)connection;
 
 @end

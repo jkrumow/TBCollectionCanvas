@@ -11,7 +11,7 @@
 #import "TBCanvasItemView.h"
 #import "TBCanvasConnectionHandle.h"
 
-@class TBCanvasNodeConnection;
+@class TBCanvasConnectionView;
 @class TBCollectionCanvasView;
 
 @protocol CanvasMoveConnectionHandleDelegate;
@@ -20,10 +20,10 @@
  This class represents a handle to move a connection on the canvas.
  It is transparent and hovers above the tip of the connection pointing to the child view.
  */
-@interface TBCanvasMoveConnectionHandle : TBCanvasConnectionHandle
+@interface TBCanvasMoveHandleView : TBCanvasItemView
 
 @property (weak, nonatomic) TBCollectionCanvasView <CanvasMoveConnectionHandleDelegate> *delegate;
-@property (weak, nonatomic) TBCanvasNodeConnection *connection;
+@property (weak, nonatomic) TBCanvasConnectionView *connection;
 
 @end
 
@@ -38,7 +38,7 @@
  @param canvasMoveConnectionHandle The given CanvasMoveConnectionHandle
  @return `YES` when the receiver is locked down to single touch processing.
  */
-- (BOOL)canProcessCanvasMoveConnectionHandle:(TBCanvasMoveConnectionHandle *)canvasMoveConnectionHandle;
+- (BOOL)canProcessCanvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle;
 
 /**
  A CanvasMoveConnectionHandle has been touched.
@@ -47,7 +47,7 @@
  @param touches                    The touches
  @param event                      The event
  */
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveConnectionHandle *)canvasMoveConnectionHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
  A CanvasMoveConnectionHandle has been moved.
@@ -56,7 +56,7 @@
  @param touches                    The touches
  @param event                      The event
  */
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveConnectionHandle *)canvasMoveConnectionHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
  Touching a CanvasMoveConnectionHandle has ended.
@@ -65,7 +65,7 @@
  @param touches                    The touches
  @param event                      The event
  */
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveConnectionHandle *)canvasMoveConnectionHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 
 /**
  Touching a CanvasMoveConnectionHandle has been cancelled.
@@ -74,6 +74,6 @@
  @param touches                    The touches
  @param event                      The event
  */
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveConnectionHandle *)canvasMoveConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
