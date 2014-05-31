@@ -15,7 +15,7 @@ A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, col
 
 ![Connect nodes](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/5_canvas_connect.png)
 
-![Connect nodes](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/5_canvas_connected.png)
+![Connect nodes](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/6_canvas_connected.png)
 
 ## Usage
 
