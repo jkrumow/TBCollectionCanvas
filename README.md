@@ -15,6 +15,8 @@ A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, col
 
 ![Connect nodes](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/5_canvas_connect.png)
 
+![Connect nodes](https://github.com/tarbrain/TBCollectionCanvas/raw/master/Documentation/Images/Screenshots/5_canvas_connected.png)
+
 ## Usage
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
