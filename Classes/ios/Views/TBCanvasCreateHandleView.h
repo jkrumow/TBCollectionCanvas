@@ -20,7 +20,14 @@
  */
 @interface TBCanvasCreateHandleView : TBCanvasItemView
 
+/**
+ *  The handle's delegate. Receives messages about touch events of the view.
+ */
 @property (weak, nonatomic) TBCollectionCanvasContentView <TBCanvasCreateHandleViewDelegate> *delegate;
+
+/**
+ *  The hosting TBCanvasNodeView.
+ */
 @property (weak, nonatomic) TBCanvasNodeView *nodeView;
 
 @end

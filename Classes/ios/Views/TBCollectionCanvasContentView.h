@@ -26,13 +26,29 @@
     CGFloat zoomScale;
 }
 
+/**
+ *  The views's datasource.
+ */
 @property (assign, nonatomic) id<TBCollectionCanvasContentViewDataSource> canvasViewDataSource;
+
+/**
+ *  The views's delegate.
+ */
 @property (assign, nonatomic) id<TBCollectionCanvasContentViewDelegate> canvasViewDelegate;
 
+/**
+ *  The view's hosting UIScrollView.
+ */
 @property (weak, nonatomic) TBCollectionCanvasView *scrollView;
 
+/**
+ *  Set to `YES` if the context menu is enabled.
+ */
 @property (assign, nonatomic, getter = isMenuEnabled) BOOL menuEnabled;
 
+/**
+ *  Set to `YES` if the view is currently handling single touches.
+ */
 @property (assign, nonatomic, readonly, getter=isLockedToSingleTouch) BOOL lockedToSingleTouch;
 
 /** @name Managing the TBCollectionCanvasContentView's content */

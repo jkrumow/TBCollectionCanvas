@@ -23,19 +23,55 @@
  */
 @interface TBCanvasNodeView : TBCanvasItemView
 
+/**
+ *  Set to `YES` if the node view is the root node of a collapsed graph segment.
+ */
 @property (assign, nonatomic) BOOL hasCollapsedSubStructure;
+
+/**
+ *  Tag of the root node of the graph segment this node view belongs to.
+ */
 @property (assign, nonatomic) NSInteger headNodeTag;
 
+/**
+ *  The node view delegate. Receives messages about touch events of the view.
+ */
+
 @property (weak, nonatomic) TBCollectionCanvasContentView <TBCanvasNodeViewDelegate> *delegate;
+
+/**
+ *  The handle view this node view is hosting.
+ */
 @property (weak, nonatomic) TBCanvasCreateHandleView *connectionHandle;
 
+/**
+ *  Stores all TBCanvasNodeView objects that are currently connected to this TBCanvasNodeView.
+ */
 @property (strong, nonatomic) NSMutableArray *connectedNodes;
+
+/**
+ *  Stores all TBCanvasConnectionView objects that connect this TBCanvasNodeView to parent TBCanvasNodeViews.
+ */
 @property (strong, nonatomic) NSMutableArray *parentConnections;
+
+/**
+ *  Stores all TBCanvasConnectionView objects that connect this TBCanvasNodeView to child TBCanvasNodeViews.
+ */
 @property (strong, nonatomic) NSMutableArray *childConnections;
 
+/**
+ *  Defines the TBCanvasCreateHandleView's anchor point inside the view's coordinate system.
+ */
 @property (assign, nonatomic) CGPoint connectionHandleAncorPoint;
+
+/**
+ *  Defines the rectangle of all TBCanvasItemView objects that are currently children of this node view.
+ */
 @property (assign, nonatomic) CGRect segmentRect;
 
+/**
+ *  The TBCanvasNodeView's content view.
+ */
 @property (strong, nonatomic) UIView *contentView;
 
 /**

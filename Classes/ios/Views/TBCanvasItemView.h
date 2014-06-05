@@ -21,9 +21,24 @@
     BOOL _isEditing;
 }
 
+/**
+ *  The view's zoomscale.
+ */
 @property (assign, nonatomic) CGFloat zoomScale;
+
+/**
+ *  The view's touch offset from center.
+ */
 @property (assign, nonatomic, readonly) CGSize touchOffset;
+
+/**
+ *  x- and y-distance to the center of the parent node.
+ */
 @property (assign, nonatomic) CGSize deltaToCollapsedNode;
+
+/**
+ *  Set to `YES` if the view is inside a collapsed graph segment.
+ */
 @property (assign, nonatomic) BOOL isInCollapsedSegment;
 
 /**

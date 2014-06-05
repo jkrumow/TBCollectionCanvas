@@ -22,35 +22,49 @@
  */
 @interface TBCanvasConnectionView : TBCanvasItemView
 
+/**
+ *  The delegate object of the connection. Receives messages about the state of the connection view.
+ */
 @property (assign, nonatomic) id<TBCanvasConnectionViewDelegate> canvasNodeConnectionDelegate;
 
 /**
- *  The index of the parent node
+ *  The index of the parent node.
  */
 @property (assign, nonatomic, readonly) NSUInteger parentIndex;
 
 /**
- *  The index of the child node
+ *  The index of the child node.
  */
 @property (assign, nonatomic, readonly) NSUInteger childIndex;
 
 /**
- *  The parent node
+ *  The parent node.
  */
 @property (weak, nonatomic) TBCanvasNodeView *parentNode;
 
 /**
- *  The child node
+ *  The child node.
  */
 @property (weak, nonatomic) TBCanvasNodeView *childNode;
 
 /**
- *  The TBCanvasMoveHandleView to move this connection
+ *  The TBCanvasMoveHandleView to move this connection.
  */
 @property (weak, nonatomic) TBCanvasMoveHandleView *moveConnectionHandle;
 
+/**
+ *  Color of the connection.
+ */
 @property (strong, nonatomic) UIColor *lineColor;
+
+/**
+ *  Point where the connection line starts - at the edge of the parent node view.
+ */
 @property (assign, nonatomic, readonly) CGPoint visibleStartPoint;
+
+/**
+ *  Point where the connection line ends - at the edge of the child node view.
+ */
 @property (assign, nonatomic, readonly) CGPoint visibleEndPoint;
 
 /**
@@ -81,7 +95,7 @@
 - (void)drawConnectionFromPoint:(CGPoint)start toPoint:(CGPoint)end;
 
 /**
-  Draws a connection between parent and child node view.
+ Draws a connection between parent and child node view.
  
  */
 - (void)drawConnection;

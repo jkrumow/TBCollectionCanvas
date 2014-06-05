@@ -25,6 +25,10 @@ extern CGFloat const CONTENT_HEIGHT;
  */
 @interface TBCollectionCanvasView : UIScrollView <UIScrollViewDelegate>
 
+
+/**
+ *  The canvas which displays all collection items.
+ */
 @property (strong, nonatomic) TBCollectionCanvasContentView *collectionCanvasView;
 
 @end
