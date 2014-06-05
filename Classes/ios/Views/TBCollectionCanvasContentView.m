@@ -1555,6 +1555,10 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             TBCanvasCreateHandleView *handle = _createHandles[canvasNodeView.tag];
             handle.center = CGPointMake(canvasNodeView.center.x, canvasNodeView.center.y + (canvasNodeView.frame.size.height / 2.0));
             [self bringSubviewToFront:_createHandles[canvasNodeView.tag]];
+            
+            for (TBCanvasConnectionView *connectionView in canvasNodeView.parentConnections) {
+                [self bringSubviewToFront:connectionView.moveConnectionHandle];
+            }
         }
         
         [self sizeCanvasToFit];
@@ -1595,6 +1599,10 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     TBCanvasCreateHandleView *handle = _createHandles[canvasNodeView.tag];
     handle.center = CGPointMake(canvasNodeView.center.x, canvasNodeView.center.y + (canvasNodeView.frame.size.height / 2.0));
     [self bringSubviewToFront:_createHandles[canvasNodeView.tag]];
+    
+    for (TBCanvasConnectionView *connectionView in canvasNodeView.parentConnections) {
+        [self bringSubviewToFront:connectionView.moveConnectionHandle];
+    }
     
     [_viewsTouched removeObject:canvasNodeView];
     [_autoscrollingItems removeObject:canvasNodeView];
