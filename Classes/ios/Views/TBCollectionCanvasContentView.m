@@ -327,8 +327,6 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
         
         self.viewWithMenu = nil;
         self.menuController = [UIMenuController sharedMenuController];
-        
-        self.canvasController = [[TBCollectionCanvasController alloc] initWithCanvasView:self];
     }
     return self;
 }
@@ -371,7 +369,6 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
                 }
                 
                 [_nodeViews addObject:nodeView];
-                [self.canvasController registerNodeView:nodeView];
                 
                 [self addSubview:nodeView];
                 

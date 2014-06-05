@@ -13,7 +13,6 @@
 #import "TBCanvasNodeView.h"
 #import "TBCollectionCanvasContentViewDataSource.h"
 #import "TBCollectionCanvasContentViewDelegate.h"
-#import "TBCollectionCanvasController.h"
 
 @class TBCollectionCanvasView;
 
@@ -31,7 +30,6 @@
 @property (assign, nonatomic) id<TBCollectionCanvasContentViewDelegate> canvasViewDelegate;
 
 @property (weak, nonatomic) TBCollectionCanvasView *scrollView;
-@property (strong, nonatomic) TBCollectionCanvasController *canvasController;
 
 @property (assign, nonatomic, getter = isMenuEnabled) BOOL menuEnabled;
 
