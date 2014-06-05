@@ -53,7 +53,7 @@
 /**
  Returns a set of Connection objects for a given Node object.
  
- Iterates through the set and connects the corresponding TBCanvasNodeView objects with CanvasNodeConnections.
+ Iterates through the set and connects the corresponding TBCanvasNodeView objects with TBCanvasConnectionViews.
  
  @param indexPath The index path of the given collection.
  

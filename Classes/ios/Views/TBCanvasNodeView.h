@@ -14,7 +14,7 @@
 #import "TBCanvasConnectionView.h"
 #import "TBCanvasCreateHandleView.h"
 
-@protocol CanvasNodeViewDelegate;
+@protocol TBCanvasNodeViewDelegate;
 @class TBCollectionCanvasContentView;
 
 /**
@@ -26,7 +26,7 @@
 @property (assign, nonatomic) BOOL hasCollapsedSubStructure;
 @property (assign, nonatomic) NSInteger headNodeTag;
 
-@property (weak, nonatomic) TBCollectionCanvasContentView <CanvasNodeViewDelegate> *delegate;
+@property (weak, nonatomic) TBCollectionCanvasContentView <TBCanvasNodeViewDelegate> *delegate;
 @property (weak, nonatomic) TBCanvasCreateHandleView *connectionHandle;
 
 @property (strong, nonatomic) NSMutableArray *connectedNodes;
@@ -44,14 +44,14 @@
 - (void)reset;
 
 /**
- Sets the CanvasNodeView's selected state.
+ Sets the TBCanvasNodeView's selected state.
  
  @param isSelected True when the TBCanvasNodeView shall be selected.
  */
 - (void)setSelected:(BOOL)isSelected;
 
 /**
- Sets the CanvasNodeView's editing state.
+ Sets the TBCanvasNodeView's editing state.
  
  @param isEditing True when the TBCanvasNodeView shall switch to edit view.
  */
@@ -69,7 +69,7 @@
 /**
  This protocol is used by the TBCanvasNodeView to communicate its state.
  */
-@protocol CanvasNodeViewDelegate <NSObject>
+@protocol TBCanvasNodeViewDelegate <NSObject>
 
 /**
  Return `YES` when the receiver is locked down to single touch processing.

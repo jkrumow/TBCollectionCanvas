@@ -74,7 +74,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
 }
 
 /*
- All touch events in a subview will not be cancelled while a CanvasItemView is being touched, moved etc.
+ All touch events in a subview will not be cancelled while a  TBCanvasItemView is being touched, moved etc.
  */
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {

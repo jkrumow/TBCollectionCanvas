@@ -12,23 +12,41 @@
 #import "TBCanvasItemView.h"
 #import "TBCanvasMoveHandleView.h"
 
-@protocol CanvasNodeConnectionDelegate;
+@protocol TBCanvasConnectionViewDelegate;
 
 @class TBCanvasNodeView;
 
 /**
- This class represents a connection between two CanvasNodeViews on the canvas.
+ This class represents a connection between two TBCanvasNodeViews on the canvas.
  
  */
 @interface TBCanvasConnectionView : TBCanvasItemView
 
-@property (assign, nonatomic) id<CanvasNodeConnectionDelegate> canvasNodeConnectionDelegate;
+@property (assign, nonatomic) id<TBCanvasConnectionViewDelegate> canvasNodeConnectionDelegate;
 
+/**
+ *  The index of the parent node
+ */
 @property (assign, nonatomic, readonly) NSUInteger parentIndex;
+
+/**
+ *  The index of the child node
+ */
 @property (assign, nonatomic, readonly) NSUInteger childIndex;
 
+/**
+ *  The parent node
+ */
 @property (weak, nonatomic) TBCanvasNodeView *parentNode;
+
+/**
+ *  The child node
+ */
 @property (weak, nonatomic) TBCanvasNodeView *childNode;
+
+/**
+ *  The TBCanvasMoveHandleView to move this connection
+ */
 @property (weak, nonatomic) TBCanvasMoveHandleView *moveConnectionHandle;
 
 @property (strong, nonatomic) UIColor *lineColor;
@@ -36,7 +54,7 @@
 @property (assign, nonatomic, readonly) CGPoint visibleEndPoint;
 
 /**
- Returns `YES` if the connection is a valid connection inside CollectionCanvasView's viewhierarchy.
+ Returns `YES` if the connection is a valid connection inside TBCollectionCanvasContentView's viewhierarchy.
  `NO` if the connection is about to be removed from the viewhierarchy.
  */
 @property (assign, nonatomic, readonly, getter = isValid) BOOL valid;
@@ -90,7 +108,7 @@
 - (NSIndexPath *)indexPath;
 
 /**
- Sets the center point of the CanvasNodeItem.
+ Sets the center point of the view.
  Set animated to YES to slide item into place and redraw connection afterwards.
  
  @param center   The given CGPoint for the new center point
@@ -104,7 +122,7 @@
  This protocol is used to notifiy the receiver about the state of a TBCanvasConnectionView.
  
  */
-@protocol CanvasNodeConnectionDelegate <NSObject>
+@protocol TBCanvasConnectionViewDelegate <NSObject>
 
 /**
  Notifies the receiver that the suspenderSnapAnimation has completed.
@@ -112,6 +130,6 @@
  @param connection The animated TBCanvasConnectionView
  @param indexPath  The index path of the given TBCanvasConnectionView
  */
-- (void)removedConnection:(TBCanvasConnectionView *)connection atIndexPath:(NSIndexPath *)indexPath;
+- (void)removedConnectionView:(TBCanvasConnectionView *)connection atIndexPath:(NSIndexPath *)indexPath;
 
 @end

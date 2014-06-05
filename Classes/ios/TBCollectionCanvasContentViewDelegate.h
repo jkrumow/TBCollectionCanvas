@@ -73,7 +73,7 @@
 - (void)didExpandSegmentOfNodesOnCanvasWithIndexPaths:(NSArray *)indexPaths nodeViews:(NSArray *)nodeViews;
 
 /**
- A CanvasNodeView's connections have been collapsed on the canvas view.
+ A  TBCanvasNodeView's connections have been collapsed on the canvas view.
  
  @param nodeView  The TBCanvasNodeView object that has been collapsed.
  @param indexPath The index path of the collapsed TBCanvasNodeView object.
@@ -81,7 +81,7 @@
 - (void)didCollapseConnectionsOnCanvasUnderNodeView:(TBCanvasNodeView *)nodeView atIndexPath:(NSIndexPath *)indexPath;
 
 /**
- A CanvasNodeView's connections have been expanded on the canvas view.
+ A  TBCanvasNodeView's connections have been expanded on the canvas view.
  
  @param nodeView  The TBCanvasNodeView object that has been expanded.
  @param indexPath The index path of the expanded TBCanvasNodeView object.

@@ -21,7 +21,7 @@
  Items can be dragged, inserted, deleted etc.
  
  */
-@interface TBCollectionCanvasContentView : UIView <CanvasNodeViewDelegate, CanvasNodeConnectionDelegate, CanvasNewConnectionHandleDelegate, CanvasMoveConnectionHandleDelegate> {
+@interface TBCollectionCanvasContentView : UIView <TBCanvasNodeViewDelegate, TBCanvasConnectionViewDelegate, TBCanvasCreateHandleViewDelegate, TBCanvasMoveHandleViewDelegate> {
     
     CGFloat zoomScale;
 }
@@ -35,7 +35,7 @@
 
 @property (assign, nonatomic, readonly, getter=isLockedToSingleTouch) BOOL lockedToSingleTouch;
 
-/** @name Managing the CollectionCanvasView's content */
+/** @name Managing the TBCollectionCanvasContentView's content */
 
 /**
  Fills the TBCollectionCanvasContentView with TBCanvasNodeView objects.
@@ -44,7 +44,7 @@
 
 /**
  Clears the canvas.
- Removes all CanvasNodeViews from view and from nodeViews array. 
+ Removes all TBCanvasNodeViews from view and from nodeViews array.
  */
 - (void)clearCanvas;
 
@@ -59,7 +59,7 @@
 - (void)sizeCanvasToFit;
 
 /**
- Redraws all CanvasNodeViews and CanvasNodeConnections on the TBCollectionCanvasContentView in the actual zoomScale.
+ Redraws all TBCanvasNodeViews and TBCanvasConnectionViews on the TBCollectionCanvasContentView in the actual zoomScale.
  
  @param scale The given zoom scale.
  */

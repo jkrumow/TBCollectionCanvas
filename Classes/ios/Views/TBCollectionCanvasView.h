@@ -21,7 +21,7 @@ extern CGFloat const CONTENT_HEIGHT;
  Touch events in a subview will not be intercepted by the TBCollectionCanvasView unless they appeared on
  the TBCollectionCanvasContentView itself. So dragging a TBCanvasNodeView as well as zooming and scrolling the TBCollectionCanvasView will preserved.
  
- All touch events in a subview will not be cancelled while a CanvasItemView is being touched, moved etc.
+ All touch events in a subview will not be cancelled while a  TBCanvasItemView is being touched, moved etc.
  */
 @interface TBCollectionCanvasView : UIScrollView <UIScrollViewDelegate>
 

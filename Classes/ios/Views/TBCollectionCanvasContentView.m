@@ -39,13 +39,13 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 // Stores all handles to move an established connection.
 @property (nonatomic, strong) NSMutableArray *moveHandles;
 
-// Stores all CanvasNodeItems that are part of the selected tree segment and will be processed with the head node.
+// Stores all TBCanvasItemViews that are part of the selected tree segment and will be processed with the head node.
 @property (nonatomic, strong) NSMutableDictionary *segmentsBelowNode;
 
 // Stores all TBCanvasConnectionView of a node view inside a selected tree segment wich point to a node view outside the segment.
 @property (nonatomic, strong) NSMutableArray *connectionViewsForFullRefresh;
 
-// A connection that is used when the user wants to establish a new connection between two CanvasNodeViews.
+// A connection that is used when the user wants to establish a new connection between two TBCanvasNodeViews.
 @property (nonatomic, strong) TBCanvasConnectionView *temporaryConnectionView;
 
 // When the temporary connection is above a TBCanvasNodeView, this view will be highlighted and stored at this pointer.
@@ -82,7 +82,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 /** @name Handling TBCanvasConnectionView objects */
 
 /**
- Adds a TBCanvasConnectionView between CanvasNodeViews.
+ Adds a TBCanvasConnectionView between TBCanvasNodeViews.
  */
 - (void)connectNodes;
 
@@ -111,7 +111,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
  Checks wether the given view touches the right and or bottom egde of the content view
  and triggers an automatic dragging.
  
- @param itemView The given CanvasItemView to check.
+ @param itemView The given TBCanvasItemView to check.
  */
 - (void)checkAutoScrollingForCanvasItemView:(TBCanvasItemView *)itemView;
 
@@ -141,7 +141,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
  @param  nodeView The given TBCanvasNodeView
  @return The resulting TBCanvasCreateHandleView
  */
-- (TBCanvasCreateHandleView *)makeNewConnectionHandleForNodeView:(TBCanvasNodeView *)nodeView;
+- (TBCanvasCreateHandleView *)makeCreateHandleForNodeView:(TBCanvasNodeView *)nodeView;
 
 /**
  Returns a TBCanvasMoveHandleView for a given TBCanvasConnectionView.
@@ -152,7 +152,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 - (TBCanvasMoveHandleView *)makeMoveConnectionHandleForConnection:(TBCanvasConnectionView *)connection;
 
 /**
- Removes all CanvasNewConnectionHandles and CanvasMoveConnectionHandles from the TBCollectionCanvasContentView
+ Removes all TBCanvasCreateHandles and TBCanvasMoveHandles from the TBCollectionCanvasContentView
  and from the 'newHandles' and 'moveHandles' arrays.
  */
 - (void)removeConnectionHandles;
@@ -172,21 +172,21 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 - (void)refreshConnectionsForView:(TBCanvasNodeView *)canvasNodeView;
 
 /**
- Redraws all CanvasNodeConnections inside the connectionsForFullRefresh array.
+ Redraws all TBCanvasConnectionViews inside the connectionsForFullRefresh array.
  */
 - (void)refreshConnectionsOutsideSelection;
 
 /**
- Move a CanvasItemView's connections.
+ Move a TBCanvasItemView's connections.
  
- @param itemView The given CanvasItemView object.
+ @param itemView The given TBCanvasItemView object.
  */
 - (void)moveConnectionsForItemView:(TBCanvasItemView *)itemView;
 
 /** @name Processing multiple items */
 
 /**
- Collects all CanvasNodeItems that belong to a selected tree segment (below the selected node view).
+ Collects all TBCanvasItemViews that belong to a selected tree segment (below the selected node view).
  Stores the collected objects inside the moveableSegment array.
  
  @param nodeView The given TBCanvasNodeView object
@@ -196,14 +196,14 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 - (NSMutableArray *)collectSegmentBelowNode:(TBCanvasNodeView *)nodeView;
 
 /**
- Calculates the smallest possible rectangle around a given array of CanvasItemView objects.
+ Calculates the smallest possible rectangle around a given array of TBCanvasItemView objects.
  
- @param treeSegment The array containing the given CanvasItemViews.
+ @param treeSegment The array containing the given TBCanvasItemViews.
  */
 - (CGRect)segmentRectangleFromSegment:(NSArray *)treeSegment;
 
 /**
- Collects all CanvasNodeConnectio objects wich point to node views outside the selected tree segment.
+ Collects all TBCanvasConnectionView objects wich point to node views outside the selected tree segment.
  Stores the collected objects inside the connectionsForFullRefresh array.
  */
 - (void)collectConnectionsForFullRefresh;
@@ -216,16 +216,16 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 - (void)collapseSegment:(TBCanvasNodeView *)nodeView;
 
 /**
- Swing the visible CanvasNodeViews to a natural treeSegment.
+ Swing the visible TBCanvasNodeViews to a natural treeSegment.
  
- @param treeSegment The treeSegment of CanvasNodeViews.
+ @param treeSegment The treeSegment of  TBCanvasNodeViews.
  */
 - (void)ticktockSegment:(NSArray *)treeSegment;
 
 /**
- Passes a collapsed treeSegment of CanvasNodeViews to the delegate to be saved.
+ Passes a collapsed treeSegment of TBCanvasNodeViews to the delegate to be saved.
  
- @param treeSegment The treeSegment of CanvasNodeViews
+ @param treeSegment The treeSegment of  TBCanvasNodeViews
  */
 - (void)saveCollapsedSegment:(NSMutableArray *)treeSegment;
 
@@ -241,7 +241,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
  
  Resets the position on the canvas - relative to head node when it is not part of a collapsed subnode.
  
- @param item The given CanvasItemView
+ @param item The given  TBCanvasItemView
  @param headNode The head node of this tree segment
  @param expandAsSubnode Set to NO when the subnode is collapsed too
  */
@@ -259,18 +259,18 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 - (void)expandSegment:(TBCanvasNodeView *)nodeView headNode:(TBCanvasNodeView *)headNode expandSubNode:(BOOL)expandSubnode;
 
 /**
- Passes an expanded treeSegment of CanvasNodeViews to the delegate to be saved.
+ Passes an expanded treeSegment of  TBCanvasNodeViews to the delegate to be saved.
  
- @param treeSegment The treeSegment of CanvasNodeViews
+ @param treeSegment The treeSegment of  TBCanvasNodeViews
  */
 - (void)saveExpandedSegment:(NSMutableArray *)treeSegment;
 
 /** @name Handling the menu */
 
 /**
- Starts timer if necesary to present a menu above the given CanvasItemView.
+ Starts timer if necesary to present a menu above the given  TBCanvasItemView.
  
- @param canvasItemView The given CanvasItemView
+ @param canvasItemView The given  TBCanvasItemView
  */
 - (void)scheduleMenuForItemView:(TBCanvasItemView *)canvasItemView;
 
@@ -339,7 +339,7 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
     self.menuController.menuItems = menuItems;
 }
 
-#pragma mark - Canvas view setup
+#pragma mark -  TBCanvas view setup
 
 - (void)fillCanvas
 {
@@ -686,17 +686,17 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     zoomScale = scale;
     
-    // Iterate through all CanvasNodeViews.
+    // Iterate through all  TBCanvasNodeViews.
     for (TBCanvasNodeView *nodeView in _nodeViews) {
         nodeView.zoomScale = zoomScale;
     }
     
-    // Iterate through all CanvasNodeConnections.
+    // Iterate through all TBCanvasConnectionViews.
     for (TBCanvasConnectionView *connection in _connectionViews) {
         connection.zoomScale = zoomScale;
     }
     
-    // Iterate through all CanvasNewConnectionHandles.
+    // Iterate through all  TBCanvasCreateHandles.
     for (TBCanvasCreateHandleView *handle in _createHandles) {
         handle.zoomScale = zoomScale;
     }
@@ -760,7 +760,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         
         // Add new connection handle if necessary.
         if (isInConnectMode) {
-            TBCanvasCreateHandleView *handle = [self makeNewConnectionHandleForNodeView:nodeView];
+            TBCanvasCreateHandleView *handle = [self makeCreateHandleForNodeView:nodeView];
             nodeView.connectionHandle = handle;
             
             [_createHandles insertObject:handle atIndex:handle.tag];
@@ -870,12 +870,12 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 
 - (void)addConnectionHandles
 {
-    // Add CanvasNewConnectionHandles
+    // Add  TBCanvasCreateHandles
     for (TBCanvasNodeView *nodeView in _nodeViews) {
         
         if (nodeView.isInCollapsedSegment == NO) {
             
-            TBCanvasCreateHandleView *handle = [self makeNewConnectionHandleForNodeView:nodeView];
+            TBCanvasCreateHandleView *handle = [self makeCreateHandleForNodeView:nodeView];
             nodeView.connectionHandle = handle;
             [_createHandles addObject:handle];
             
@@ -883,7 +883,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         }
     }
     
-    // Add CanvasMoveConnectionHandles
+    // Add  TBCanvasMoveHandles
     for (TBCanvasConnectionView *connection in _connectionViews) {
         
         if (connection.isInCollapsedSegment == NO) {
@@ -897,7 +897,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
 }
 
-- (TBCanvasCreateHandleView *)makeNewConnectionHandleForNodeView:(TBCanvasNodeView *)nodeView
+- (TBCanvasCreateHandleView *)makeCreateHandleForNodeView:(TBCanvasNodeView *)nodeView
 {
     CGPoint handleCenter = [self convertPoint:nodeView.connectionHandleAncorPoint toView:self];
     
@@ -983,9 +983,9 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
 }
 
-#pragma mark - CanvasNodeConnectionDelegate
+#pragma mark - TBCanvasConnectionViewDelegate
 
-- (void)removedConnection:(TBCanvasConnectionView *)connection atIndexPath:(NSIndexPath *)indexPath
+- (void)removedConnectionView:(TBCanvasConnectionView *)connection atIndexPath:(NSIndexPath *)indexPath
 {
     [connection removeFromSuperview];
     [connection.parentNode.connectedNodes removeObject:connection.childNode];
@@ -1401,41 +1401,6 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     return ((_temporaryConnectionView) || (_selectedConnectionView));
 }
 
-#pragma mark - CanvasItemViewDelegate
-
-- (BOOL)canProcessCanvasNodeView:(TBCanvasNodeView *)canvasNodeView
-{
-    return ([self isInSingleTouchMode] == NO);
-}
-
-- (BOOL)canProcessCanvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle
-{
-    if ([self isInSingleTouchMode]) {
-        return (_viewsTouched[0] == canvasNewConnectionHandle);
-    }
-    
-    if ([self isProcessingViews]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (BOOL)canProcessCanvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle
-{
-    if ([self isInSingleTouchMode]) {
-        return (_viewsTouched[0] == canvasMoveConnectionHandle);
-    }
-    
-    if ([self isProcessingViews]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-#pragma mark - CanvasNodeViewDelegate
-
 - (NSMutableArray *)segmentForCanvasNodeView:(TBCanvasNodeView *)canvasNodeView
 {
     NSString *key = [NSString stringWithFormat:@"%li", (long)canvasNodeView.tag];
@@ -1447,6 +1412,13 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
     
     return segmentBelowNode;
+}
+
+#pragma mark - TBCanvasNodeViewDelegate
+
+- (BOOL)canProcessCanvasNodeView:(TBCanvasNodeView *)canvasNodeView
+{
+    return ([self isInSingleTouchMode] == NO);
 }
 
 - (void)canvasNodeView:(TBCanvasNodeView *)canvasNodeView touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -1611,9 +1583,22 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     [_autoscrollingItems removeObject:canvasNodeView];
 }
 
-#pragma mark - CanvasNewConnectionHandleDelegate
+#pragma mark - TBCanvasCreateHandleViewDelegate
 
-- (void)canvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (BOOL)canProcessCanvasCreateHandle:(TBCanvasCreateHandleView *)canvasCreateHandle
+{
+    if ([self isInSingleTouchMode]) {
+        return (_viewsTouched[0] == canvasCreateHandle);
+    }
+    
+    if ([self isProcessingViews]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)canvasCreateHandle:(TBCanvasCreateHandleView *)canvasCreateHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
@@ -1621,14 +1606,14 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     
     CGPoint location = [[touches anyObject] locationInView:self];
     
-    location.x += canvasNewConnectionHandle.touchOffset.width;
-    location.y += canvasNewConnectionHandle.touchOffset.height;
+    location.x += canvasCreateHandle.touchOffset.width;
+    location.y += canvasCreateHandle.touchOffset.height;
     
-    [_viewsTouched addObject:canvasNewConnectionHandle];
-    [canvasNewConnectionHandle setHighlighted:YES];
+    [_viewsTouched addObject:canvasCreateHandle];
+    [canvasCreateHandle setHighlighted:YES];
     
     // Add the temporary connection object.
-    TBCanvasNodeView *parentView = _nodeViews[canvasNewConnectionHandle.tag];
+    TBCanvasNodeView *parentView = _nodeViews[canvasCreateHandle.tag];
     _temporaryConnectionView = [self.canvasViewDataSource newConectionForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
     _temporaryConnectionView.canvasNodeConnectionDelegate = self;
     _temporaryConnectionView.parentNode = parentView;
@@ -1644,16 +1629,16 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     [_temporaryConnectionView drawConnectionFromPoint:start toPoint:end];
 }
 
-- (void)canvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasCreateHandle:(TBCanvasCreateHandleView *)canvasCreateHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
     CGPoint location = [[touches anyObject] locationInView:self];
     
-    location.x += [canvasNewConnectionHandle touchOffset].width;
-    location.y += [canvasNewConnectionHandle touchOffset].height;
+    location.x += [canvasCreateHandle touchOffset].width;
+    location.y += [canvasCreateHandle touchOffset].height;
     
-    canvasNewConnectionHandle.center = location;
+    canvasCreateHandle.center = location;
     isMovingCanvasNodeViews = YES;
     
     _temporaryConnectionView.frame =  CGRectMake(_temporaryConnectionView.parentNode.center.x, _temporaryConnectionView.parentNode.center.y,
@@ -1666,7 +1651,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     
     for (TBCanvasNodeView *nodeView in _nodeViews) {
         
-        if ((CGRectIntersectsRect(nodeView.frame, canvasNewConnectionHandle.frame))  && (nodeView != _temporaryConnectionView.parentNode) && (nodeView.isInCollapsedSegment == NO)) {
+        if ((CGRectIntersectsRect(nodeView.frame, canvasCreateHandle.frame))  && (nodeView != _temporaryConnectionView.parentNode) && (nodeView.isInCollapsedSegment == NO)) {
             if (_connectableNodeView) {
                 if (_connectableNodeView != (TBCanvasNodeView *)nodeView) {
                     [_connectableNodeView setSelected:NO];
@@ -1694,10 +1679,10 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
     
 bail:
-    [self checkAutoScrollingForCanvasItemView:canvasNewConnectionHandle];
+    [self checkAutoScrollingForCanvasItemView:canvasCreateHandle];
 }
 
-- (void)canvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasCreateHandle:(TBCanvasCreateHandleView *)canvasCreateHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
@@ -1742,9 +1727,9 @@ bail:
         }
     }
     
-    canvasNewConnectionHandle.center = [self convertPoint:_temporaryConnectionView.parentNode.connectionHandleAncorPoint toView:self];
+    canvasCreateHandle.center = [self convertPoint:_temporaryConnectionView.parentNode.connectionHandleAncorPoint toView:self];
     
-    [canvasNewConnectionHandle setHighlighted:NO];
+    [canvasCreateHandle setHighlighted:NO];
     [_temporaryConnectionView removeFromSuperview];
     _temporaryConnectionView = nil;
     _connectableNodeView = nil;
@@ -1752,39 +1737,52 @@ bail:
     [self sizeCanvasToFit];
     [self scrollTouchedViewToVisible];
     
-    [_viewsTouched removeObject:canvasNewConnectionHandle];
-    [_autoscrollingItems removeObject:canvasNewConnectionHandle];
+    [_viewsTouched removeObject:canvasCreateHandle];
+    [_autoscrollingItems removeObject:canvasCreateHandle];
     
     _lockedToSingleTouch = NO;
 }
 
-- (void)canvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasCreateHandle:(TBCanvasCreateHandleView *)canvasCreateHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     isMovingCanvasNodeViews = NO;
     [_autoscrollTimer invalidate];
     [self sizeCanvasToFit];
     
-    canvasNewConnectionHandle.center = [self convertPoint:_temporaryConnectionView.parentNode.connectionHandleAncorPoint toView:self];
+    canvasCreateHandle.center = [self convertPoint:_temporaryConnectionView.parentNode.connectionHandleAncorPoint toView:self];
     [_temporaryConnectionView removeFromSuperview];
     _temporaryConnectionView = nil;
     _connectableNodeView = nil;
     
     [self scrollTouchedViewToVisible];
     
-    [canvasNewConnectionHandle setSelected:NO];
+    [canvasCreateHandle setSelected:NO];
     
     [_connectionViewsForFullRefresh removeAllObjects];
     
-    [_viewsTouched removeObject:canvasNewConnectionHandle];
-    [_autoscrollingItems removeObject:canvasNewConnectionHandle];
+    [_viewsTouched removeObject:canvasCreateHandle];
+    [_autoscrollingItems removeObject:canvasCreateHandle];
     
     _lockedToSingleTouch = NO;
 }
 
-#pragma mark - CanvasMoveConnectionHandleDelegate
+#pragma mark - TBCanvasMoveHandleViewDelegate
 
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (BOOL)canProcessCanvasMoveHandle:(TBCanvasMoveHandleView *)canvasMoveHandle
+{
+    if ([self isInSingleTouchMode]) {
+        return (_viewsTouched[0] == canvasMoveHandle);
+    }
+    
+    if ([self isProcessingViews]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)canvasMoveHandle:(TBCanvasMoveHandleView *)canvasMoveHandle touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
@@ -1792,14 +1790,14 @@ bail:
     
     CGPoint location = [[touches anyObject] locationInView:self];
     
-    location.x += canvasMoveConnectionHandle.touchOffset.width;
-    location.y += canvasMoveConnectionHandle.touchOffset.height;
+    location.x += canvasMoveHandle.touchOffset.width;
+    location.y += canvasMoveHandle.touchOffset.height;
     
-    [_viewsTouched addObject:canvasMoveConnectionHandle];
-    [canvasMoveConnectionHandle setHighlighted:YES];
+    [_viewsTouched addObject:canvasMoveHandle];
+    [canvasMoveHandle setHighlighted:YES];
     
     // Set the selected connection object.
-    _selectedConnectionView = canvasMoveConnectionHandle.connection;
+    _selectedConnectionView = canvasMoveHandle.connection;
     
     CGPoint start = [self convertPoint:_selectedConnectionView.parentNode.center toView:_selectedConnectionView];
     CGPoint end   = [self convertPoint:location toView:_selectedConnectionView];
@@ -1807,16 +1805,16 @@ bail:
     [_selectedConnectionView drawConnectionFromPoint:start toPoint:end];
 }
 
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasMoveHandle:(TBCanvasMoveHandleView *)canvasMoveHandle touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
     CGPoint location = [[touches anyObject] locationInView:self];
     
-    location.x += canvasMoveConnectionHandle.touchOffset.width;
-    location.y += canvasMoveConnectionHandle.touchOffset.height;
+    location.x += canvasMoveHandle.touchOffset.width;
+    location.y += canvasMoveHandle.touchOffset.height;
     
-    canvasMoveConnectionHandle.center = location;
+    canvasMoveHandle.center = location;
     isMovingCanvasNodeViews = YES;
     
     
@@ -1830,7 +1828,7 @@ bail:
     
     for (TBCanvasNodeView *nodeView in _nodeViews) {
         
-        if ((CGRectIntersectsRect(nodeView.frame, canvasMoveConnectionHandle.frame)) && (nodeView != _selectedConnectionView.parentNode) && (nodeView.isInCollapsedSegment == NO)) {
+        if ((CGRectIntersectsRect(nodeView.frame, canvasMoveHandle.frame)) && (nodeView != _selectedConnectionView.parentNode) && (nodeView.isInCollapsedSegment == NO)) {
             if (_connectableNodeView) {
                 if (_connectableNodeView != (TBCanvasNodeView *)nodeView) {
                     [_connectableNodeView setSelected:NO];
@@ -1858,10 +1856,10 @@ bail:
     }
     
 bail2:
-    [self checkAutoScrollingForCanvasItemView:canvasMoveConnectionHandle];
+    [self checkAutoScrollingForCanvasItemView:canvasMoveHandle];
 }
 
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasMoveHandle:(TBCanvasMoveHandleView *)canvasMoveHandle touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     
@@ -1884,8 +1882,8 @@ bail2:
             [_canvasViewDelegate didMoveConnectionAtNode:connectionIndexPath toNewChildIndexPath:newChildIndexPath];
         }
         
-        canvasMoveConnectionHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];
-        [canvasMoveConnectionHandle setHighlighted:NO];
+        canvasMoveHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];
+        [canvasMoveHandle setHighlighted:NO];
         _selectedConnectionView = nil;
         _connectableNodeView = nil;
         
@@ -1894,8 +1892,8 @@ bail2:
         [_selectedConnectionView suspenderSnapAnimation];
         _selectedConnectionView = nil;
         _connectableNodeView = nil;
-        [canvasMoveConnectionHandle removeFromSuperview];
-        [_moveHandles removeObject:canvasMoveConnectionHandle];
+        [canvasMoveHandle removeFromSuperview];
+        [_moveHandles removeObject:canvasMoveHandle];
     }
     
     [self sizeCanvasToFit];
@@ -1904,13 +1902,13 @@ bail2:
     isMovingCanvasNodeViews = NO;
     [_autoscrollTimer invalidate];
     
-    [_viewsTouched removeObject:canvasMoveConnectionHandle];
-    [_autoscrollingItems removeObject:canvasMoveConnectionHandle];
+    [_viewsTouched removeObject:canvasMoveHandle];
+    [_autoscrollingItems removeObject:canvasMoveHandle];
     
     _lockedToSingleTouch = NO;
 }
 
-- (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)canvasMoveHandle:(TBCanvasMoveHandleView *)canvasMoveHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideMenu];
     isMovingCanvasNodeViews = NO;
@@ -1919,13 +1917,13 @@ bail2:
     [self sizeCanvasToFit];
     [self scrollTouchedViewToVisible];
     
-    canvasMoveConnectionHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];
-    [canvasMoveConnectionHandle setHighlighted:NO];
+    canvasMoveHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];
+    [canvasMoveHandle setHighlighted:NO];
     _selectedConnectionView = nil;
     _connectableNodeView = nil;
     
-    [_viewsTouched removeObject:canvasMoveConnectionHandle];
-    [_autoscrollingItems removeObject:canvasMoveConnectionHandle];
+    [_viewsTouched removeObject:canvasMoveHandle];
+    [_autoscrollingItems removeObject:canvasMoveHandle];
     
     _lockedToSingleTouch = NO;
 }

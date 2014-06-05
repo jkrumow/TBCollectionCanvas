@@ -213,8 +213,8 @@
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
 {
     NSIndexPath *connectionIndexPath = [self indexPath];
-    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnection:atIndexPath:)]) {
-        [canvasNodeConnectionDelegate removedConnection:self atIndexPath:connectionIndexPath];
+    if ([canvasNodeConnectionDelegate respondsToSelector:@selector(removedConnectionView:atIndexPath:)]) {
+        [canvasNodeConnectionDelegate removedConnectionView:self atIndexPath:connectionIndexPath];
     }
 }
 
