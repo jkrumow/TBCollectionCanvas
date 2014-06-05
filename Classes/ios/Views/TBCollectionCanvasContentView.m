@@ -118,7 +118,7 @@ NSString * const kInternalInconsistencyException = @"InternalInconsistencyExcept
 /**
  Scrolls the touched view to be visible.
  */
-- (void)scrollNodeViewToVisible;
+- (void)scrollTouchedViewToVisible;
 
 /** @name Connection Handles */
 
@@ -532,7 +532,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             [_autoscrollingItems removeAllObjects];
             
             [self sizeCanvasToFit];
-            [self scrollNodeViewToVisible];
+            [self scrollTouchedViewToVisible];
         }
     }
 }
@@ -638,7 +638,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             [_autoscrollingItems removeAllObjects];
             
             [self sizeCanvasToFit];
-            [self scrollNodeViewToVisible];
+            [self scrollTouchedViewToVisible];
         }
         
     } else {
@@ -651,7 +651,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
 }
 
-- (void)scrollNodeViewToVisible
+- (void)scrollTouchedViewToVisible
 {
     if (_viewsTouched.count == 1) {
         TBCanvasItemView *viewTouched = _viewsTouched.lastObject;
@@ -1562,7 +1562,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         }
         
         [self sizeCanvasToFit];
-        [self scrollNodeViewToVisible];
+        [self scrollTouchedViewToVisible];
         
         if (canvasNodeView.hasCollapsedSubStructure) {
             
@@ -1603,6 +1603,9 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     for (TBCanvasConnectionView *connectionView in canvasNodeView.parentConnections) {
         [self bringSubviewToFront:connectionView.moveConnectionHandle];
     }
+    
+    [self sizeCanvasToFit];
+    [self scrollTouchedViewToVisible];
     
     [_viewsTouched removeObject:canvasNodeView];
     [_autoscrollingItems removeObject:canvasNodeView];
@@ -1746,12 +1749,13 @@ bail:
     _temporaryConnectionView = nil;
     _connectableNodeView = nil;
     
+    [self sizeCanvasToFit];
+    [self scrollTouchedViewToVisible];
+    
     [_viewsTouched removeObject:canvasNewConnectionHandle];
     [_autoscrollingItems removeObject:canvasNewConnectionHandle];
     
     _lockedToSingleTouch = NO;
-    
-    [self sizeCanvasToFit];
 }
 
 - (void)canvasNewConnectionHandle:(TBCanvasCreateHandleView *)canvasNewConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -1766,7 +1770,7 @@ bail:
     _temporaryConnectionView = nil;
     _connectableNodeView = nil;
     
-    [self scrollNodeViewToVisible];
+    [self scrollTouchedViewToVisible];
     
     [canvasNewConnectionHandle setSelected:NO];
     
@@ -1894,6 +1898,8 @@ bail2:
         [_moveHandles removeObject:canvasMoveConnectionHandle];
     }
     
+    [self sizeCanvasToFit];
+    [self scrollTouchedViewToVisible];
     
     isMovingCanvasNodeViews = NO;
     [_autoscrollTimer invalidate];
@@ -1902,8 +1908,6 @@ bail2:
     [_autoscrollingItems removeObject:canvasMoveConnectionHandle];
     
     _lockedToSingleTouch = NO;
-    
-    [self sizeCanvasToFit];
 }
 
 - (void)canvasMoveConnectionHandle:(TBCanvasMoveHandleView *)canvasMoveConnectionHandle touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -1911,7 +1915,9 @@ bail2:
     [self hideMenu];
     isMovingCanvasNodeViews = NO;
     [_autoscrollTimer invalidate];
+    
     [self sizeCanvasToFit];
+    [self scrollTouchedViewToVisible];
     
     canvasMoveConnectionHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];
     [canvasMoveConnectionHandle setHighlighted:NO];
