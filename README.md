@@ -1,7 +1,8 @@
 # TBCollectionCanvas
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/TBCollectionCanvas/badge.png)](http://cocoadocs.org/docsets/TBCollectionCanvas)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/TBCollectionCanvas/badge.png)](http://cocoadocs.org/docsets/TBCollectionCanvas)
+[![Version](https://img.shields.io/cocoapods/v/TBCollectionCanvas.svg?style=flat)](http://cocoadocs.org/docsets/TBCollectionCanvas)
+[![License](https://img.shields.io/cocoapods/l/TBCollectionCanvas.svg?style=flat)](http://cocoadocs.org/docsets/TBCollectionCanvas)
+[![Platform](https://img.shields.io/cocoapods/p/TBCollectionCanvas.svg?style=flat)](http://cocoadocs.org/docsets/TBCollectionCanvas)
 
 A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, collapsed and expanded.
 
@@ -19,9 +20,12 @@ A canvas with moveable nodes. Nodes can be added, deleted, moved, connected, col
 
 ## Usage
 
-To run the example project; clone the repo, and run `pod install` from the Project directory first.
+To run the example project; clone the repo, and run `pod install` from the `CollectionCanvasDemo` directory first.
 
 ## Requirements
+
+* Xcode 5
+* iOS 5.0
 
 ## Installation
 
