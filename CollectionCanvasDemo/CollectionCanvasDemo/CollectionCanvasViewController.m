@@ -27,7 +27,7 @@
 - (void)setCollectionCanvasScrollView:(TBCollectionCanvasView *)collectionCanvasScrollView
 {
     _collectionCanvasScrollView = collectionCanvasScrollView;
-    _collectionCanvasScrollView.contentSize = CGSizeMake(kTBCollectionCanvasContentViewWidth, kTBCollectionCanvasContentViewHeight);
+    _collectionCanvasScrollView.contentSize = CGSizeMake(TBCollectionCanvasContentViewWidth, TBCollectionCanvasContentViewHeight);
     _collectionCanvasScrollView.zoomScale = 0.5;
     _collectionCanvasScrollView.minimumZoomScale = 0.3;
     _collectionCanvasScrollView.maximumZoomScale = 1.0;
