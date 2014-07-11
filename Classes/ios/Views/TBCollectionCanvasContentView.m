@@ -347,15 +347,15 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
     NSMutableArray *headNodes = [[NSMutableArray alloc] init];
     NSMutableArray *segmentNodes = [[NSMutableArray alloc] init];
     
-    if ([_canvasViewDataSource respondsToSelector:@selector(numberOfNodesInSection:)]) {
-        nodeCount = [_canvasViewDataSource numberOfNodesInSection:0];
+    if ([_canvasViewDataSource respondsToSelector:@selector(collectionCanvasContentView:numberOfNodesInSection:)]) {
+        nodeCount = [_canvasViewDataSource collectionCanvasContentView:self numberOfNodesInSection:0];
     }
     
     for (NSInteger i = 0; i < nodeCount; i++) {
         TBCanvasNodeView *nodeView = nil;
         
-        if ([_canvasViewDataSource respondsToSelector:@selector(nodeViewOnCanvasAtIndexPath:)]) {
-            nodeView = [_canvasViewDataSource nodeViewOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        if ([_canvasViewDataSource respondsToSelector:@selector(collectionCanvasContentView:nodeViewAtIndexPath:)]) {
+            nodeView = [_canvasViewDataSource collectionCanvasContentView:self nodeViewAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         }
         if (nodeView) {
             
@@ -432,8 +432,8 @@ static CGFloat OUTER_FILEVIEW_MARGIN    = 40.0;
     // Iterate through all nodes.
     for (TBCanvasNodeView *nodeView in _nodeViews) {
         
-        if ([_canvasViewDataSource respondsToSelector:@selector(connectionsForNodeOnCanvasAtIndexPath:)]) {
-            nodeConnections = [_canvasViewDataSource connectionsForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:nodeView.tag inSection:0]];
+        if ([_canvasViewDataSource respondsToSelector:@selector(collectionCanvasContentView:connectionsForNodeAtIndexPath:)]) {
+            nodeConnections = [_canvasViewDataSource collectionCanvasContentView:self connectionsForNodeAtIndexPath:[NSIndexPath indexPathForRow:nodeView.tag inSection:0]];
         }
         
         // Iterate through all connections.
@@ -722,8 +722,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     
     TBCanvasNodeView *nodeView = nil;
     
-    if ([_canvasViewDataSource respondsToSelector:@selector(nodeViewOnCanvasAtIndexPath:)]) {
-        nodeView = [_canvasViewDataSource nodeViewOnCanvasAtIndexPath:indexPath];
+    if ([_canvasViewDataSource respondsToSelector:@selector(collectionCanvasContentView:nodeViewAtIndexPath:)]) {
+        nodeView = [_canvasViewDataSource collectionCanvasContentView:self nodeViewAtIndexPath:indexPath];
     }
     
     if (nodeView) {
@@ -741,8 +741,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     TBCanvasNodeView *nodeView = nil;
     
-    if ([_canvasViewDataSource respondsToSelector:@selector(nodeViewOnCanvasAtIndexPath:)]) {
-        nodeView = [_canvasViewDataSource nodeViewOnCanvasAtIndexPath:indexPath];
+    if ([_canvasViewDataSource respondsToSelector:@selector(collectionCanvasContentView:nodeViewAtIndexPath:)]) {
+        nodeView = [_canvasViewDataSource collectionCanvasContentView:self nodeViewAtIndexPath:indexPath];
     }
     
     if (nodeView) {
@@ -901,7 +901,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     CGPoint handleCenter = [self convertPoint:nodeView.connectionHandleAncorPoint toView:self];
     
-    TBCanvasCreateHandleView *handle = [self.canvasViewDataSource newHandleForConnectionAtPoint:handleCenter];
+    TBCanvasCreateHandleView *handle = [self.canvasViewDataSource collectionCanvasContentView:self newHandleForConnectionAtPoint:handleCenter];
     handle.zoomScale = zoomScale;
     handle.nodeView = nodeView;
     handle.delegate = self;
@@ -913,7 +913,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
 {
     CGPoint handleCenter = [self convertPoint:connection.visibleEndPoint fromView:connection];
     
-    TBCanvasMoveHandleView *handle = [self.canvasViewDataSource moveHandleForConnectionAtPoint:handleCenter];
+    TBCanvasMoveHandleView *handle = [self.canvasViewDataSource collectionCanvasContentView:self moveHandleForConnectionAtPoint:handleCenter];
     handle.zoomScale = zoomScale;
     handle.connection = connection;
     handle.delegate = self;
@@ -994,8 +994,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     [connection.childNode.parentConnections removeObject:connection];
     [_connectionViews removeObject:connection];
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didRemoveConnectionAtIndexPath:)]) {
-        [_canvasViewDelegate didRemoveConnectionAtIndexPath:indexPath];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didRemoveConnectionAtIndexPath:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didRemoveConnectionAtIndexPath:indexPath];
     }
 }
 
@@ -1068,12 +1068,12 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     nodeView.hasCollapsedSubStructure = YES;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:nodeView.tag inSection:0];
-    if ([_canvasViewDelegate respondsToSelector:@selector(didCollapseNodeOnCanvasAtIndexPath:nodeView:)]) {
-        [_canvasViewDelegate didCollapseNodeOnCanvasAtIndexPath:indexPath nodeView:nodeView];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didCollapseNodeAtIndexPath:nodeView:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didCollapseNodeAtIndexPath:indexPath nodeView:nodeView];
     }
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didCollapseConnectionsOnCanvasUnderNodeView:atIndexPath:)]) {
-        [_canvasViewDelegate didCollapseConnectionsOnCanvasUnderNodeView:nodeView atIndexPath:indexPath];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didCollapseConnectionsBelowNodeView:atIndexPath:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didCollapseConnectionsBelowNodeView:nodeView atIndexPath:indexPath];
     }
     
     // Collapse segment
@@ -1142,14 +1142,14 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:item.tag inSection:0];
             [collapsedNodeIndexPaths addObject:indexPath];
             
-            if ([_canvasViewDelegate respondsToSelector:@selector(didCollapseConnectionsOnCanvasUnderNodeView:atIndexPath:)]) {
-                [_canvasViewDelegate didCollapseConnectionsOnCanvasUnderNodeView:nodeView atIndexPath:indexPath];
+            if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didCollapseConnectionsBelowNodeView:atIndexPath:)]) {
+                [_canvasViewDelegate collectionCanvasContentView:self didCollapseConnectionsBelowNodeView:nodeView atIndexPath:indexPath];
             }
         }
     }
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didCollapseSegmentOfNodesOnCanvasWithIndexPaths:nodeViews:)]) {
-        [_canvasViewDelegate didCollapseSegmentOfNodesOnCanvasWithIndexPaths:collapsedNodeIndexPaths nodeViews:collapsedNodeViews];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didCollapseSegmentOfNodesAtIndexPaths:nodeViews:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didCollapseSegmentOfNodesAtIndexPaths:collapsedNodeIndexPaths nodeViews:collapsedNodeViews];
     }
 }
 
@@ -1166,12 +1166,12 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     nodeView.hasCollapsedSubStructure = NO;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:nodeView.tag inSection:0];
-    if ([_canvasViewDelegate respondsToSelector:@selector(didExpandNodeOnCanvasAtIndexPath:nodeView:)]) {
-        [_canvasViewDelegate didExpandNodeOnCanvasAtIndexPath:indexPath nodeView:nodeView];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didExpandNodeAtIndexPath:nodeView:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didExpandNodeAtIndexPath:indexPath nodeView:nodeView];
     }
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didExpandConnectionsOnCanvasUnderNodeView:atIndexPath:)]) {
-        [_canvasViewDelegate didExpandConnectionsOnCanvasUnderNodeView:nodeView atIndexPath:indexPath];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didExpandConnectionsBelowNodeView:atIndexPath:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didExpandConnectionsBelowNodeView:nodeView atIndexPath:indexPath];
     }
     
     // Redraw connections to external node views.
@@ -1279,14 +1279,14 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:nodeView.tag inSection:0];
             [expandedNodeIndexPaths addObject:indexPath];
             
-            if ([_canvasViewDelegate respondsToSelector:@selector(didExpandConnectionsOnCanvasUnderNodeView:atIndexPath:)]) {
-                [_canvasViewDelegate didExpandConnectionsOnCanvasUnderNodeView:nodeView atIndexPath:indexPath];
+            if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didExpandConnectionsBelowNodeView:atIndexPath:)]) {
+                [_canvasViewDelegate collectionCanvasContentView:self didExpandConnectionsBelowNodeView:nodeView atIndexPath:indexPath];
             }
         }
     }
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didExpandSegmentOfNodesOnCanvasWithIndexPaths:nodeViews:)]) {
-        [_canvasViewDelegate didExpandSegmentOfNodesOnCanvasWithIndexPaths:expandedNodeIndexPaths nodeViews:expandedNodeViews];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didExpandSegmentOfNodesAtIndexPaths:nodeViews:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didExpandSegmentOfNodesAtIndexPaths:expandedNodeIndexPaths nodeViews:expandedNodeViews];
     }
 }
 
@@ -1384,8 +1384,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     
     [self deleteNodeAtIndexPath:indexPath];
     
-    if ([_canvasViewDelegate respondsToSelector:@selector(didDeleteNodeOnCanvasAtIndexPath:)]) {
-        [_canvasViewDelegate didDeleteNodeOnCanvasAtIndexPath:indexPath];
+    if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didDeleteNodeAtIndexPath:)]) {
+        [_canvasViewDelegate collectionCanvasContentView:self didDeleteNodeAtIndexPath:indexPath];
     }
 }
 
@@ -1513,14 +1513,14 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
         if (_viewWithMenu == nil) {
             [self killMenuTimer];
             
-            if ([_canvasViewDelegate respondsToSelector:@selector(didSelectNodeOnCanvasAtIndexPath:)]) {
-                [_canvasViewDelegate didSelectNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:canvasNodeView.tag inSection:0]];
+            if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didSelectNodeAtIndexPath:)]) {
+                [_canvasViewDelegate collectionCanvasContentView:self didSelectNodeAtIndexPath:[NSIndexPath indexPathForRow:canvasNodeView.tag inSection:0]];
             }
         }
     } else {
         
-        if ([_canvasViewDelegate respondsToSelector:@selector(didMoveNodeOnCanvasAtIndexPath:nodeView:)]) {
-            [_canvasViewDelegate didMoveNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:canvasNodeView.tag inSection:0] nodeView:canvasNodeView];
+        if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didMoveNodeAtIndexPath:nodeView:)]) {
+            [_canvasViewDelegate collectionCanvasContentView:self didMoveNodeAtIndexPath:[NSIndexPath indexPathForRow:canvasNodeView.tag inSection:0] nodeView:canvasNodeView];
         }
         
         if (isInConnectMode) {
@@ -1544,8 +1544,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
                     [segmentOfNodeViews addObject:nodeView];
                 }
             }
-            if ([_canvasViewDelegate respondsToSelector:@selector(didMoveSegmentOfNodesOnCanvasWithIndexPaths:nodeViews:)]) {
-                [_canvasViewDelegate didMoveSegmentOfNodesOnCanvasWithIndexPaths:nil nodeViews:segmentOfNodeViews];
+            if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didMoveSegmentOfNodesAtIndexPaths:nodeViews:)]) {
+                [_canvasViewDelegate collectionCanvasContentView:self didMoveSegmentOfNodesAtIndexPaths:nil nodeViews:segmentOfNodeViews];
             }
         }
     }
@@ -1614,7 +1614,7 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     
     // Add the temporary connection object.
     TBCanvasNodeView *parentView = _nodeViews[canvasCreateHandle.tag];
-    _temporaryConnectionView = [self.canvasViewDataSource newConectionForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
+    _temporaryConnectionView = [self.canvasViewDataSource collectionCanvasContentView:self newConectionForNodeAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
     _temporaryConnectionView.canvasNodeConnectionDelegate = self;
     _temporaryConnectionView.parentNode = parentView;
     _temporaryConnectionView.zoomScale = zoomScale;
@@ -1690,7 +1690,7 @@ bail:
         TBCanvasNodeView *parentView = _temporaryConnectionView.parentNode;
         
         // Add a new valid connection.
-        TBCanvasConnectionView *connection = [self.canvasViewDataSource newConectionForNodeOnCanvasAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
+        TBCanvasConnectionView *connection = [self.canvasViewDataSource collectionCanvasContentView:self newConectionForNodeAtIndexPath:[NSIndexPath indexPathForRow:parentView.tag inSection:0]];
         connection.canvasNodeConnectionDelegate = self;
         connection.zoomScale = zoomScale;
         
@@ -1722,8 +1722,8 @@ bail:
         NSIndexPath *parentIndex = [NSIndexPath indexPathForRow:connection.parentNode.tag inSection:0];
         NSIndexPath *childIndex = [NSIndexPath indexPathForRow:connection.childNode.tag inSection:0];
         
-        if ([_canvasViewDelegate respondsToSelector:@selector(didAddConnectionAtIndexPath:andNodeAtIndexPath:)]) {
-            [_canvasViewDelegate didAddConnectionAtIndexPath:parentIndex andNodeAtIndexPath:childIndex];
+        if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didAddConnectionBetweenParentAtIndexPath:childAtIndexPath:)]) {
+            [_canvasViewDelegate collectionCanvasContentView:self didAddConnectionBetweenParentAtIndexPath:parentIndex childAtIndexPath:childIndex];
         }
     }
     
@@ -1878,8 +1878,8 @@ bail2:
         [_connectableNodeView setSelected:NO];
         _connectableNodeView = nil;
         
-        if ([_canvasViewDelegate respondsToSelector:@selector(didMoveConnectionAtNode:toNewChildIndexPath:)]) {
-            [_canvasViewDelegate didMoveConnectionAtNode:connectionIndexPath toNewChildIndexPath:newChildIndexPath];
+        if ([_canvasViewDelegate respondsToSelector:@selector(collectionCanvasContentView:didMoveConnectionAtNode:toNewChildIndexPath:)]) {
+            [_canvasViewDelegate collectionCanvasContentView:self didMoveConnectionAtNode:connectionIndexPath toNewChildIndexPath:newChildIndexPath];
         }
         
         canvasMoveHandle.center = [self convertPoint:_selectedConnectionView.visibleEndPoint fromView:_selectedConnectionView];

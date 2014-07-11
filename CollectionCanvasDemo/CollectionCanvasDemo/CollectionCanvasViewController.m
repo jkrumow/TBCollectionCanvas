@@ -77,17 +77,17 @@
 
 #pragma mark - TBCollectionCanvasContentViewDataSource
 
-- (NSInteger)numberOfSectionsOnCanvas
+- (NSInteger)numberOfSectionsOnCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView
 {
     return 0;
 }
 
--(NSInteger)numberOfNodesInSection:(NSInteger)section
+-(NSInteger)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView numberOfNodesInSection:(NSInteger)section
 {
     return 5;
 }
 
-- (TBCanvasNodeView *)nodeViewOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (TBCanvasNodeView *)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView nodeViewAtIndexPath:(NSIndexPath *)indexPath
 {
     TBCanvasNodeView *nodeView = [[TBCanvasNodeView alloc] initWithFrame:CGRectZero];
     nodeView.tag = indexPath.row;
@@ -104,24 +104,24 @@
     nodeView.center = CGPointMake(100.0 * (indexPath.row + 1), 100.0 * (indexPath.row + 1));
 }
 
-- (TBCanvasConnectionView *)newConectionForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (TBCanvasConnectionView *)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView newConectionForNodeAtIndexPath:(NSIndexPath *)indexPath
 {
     TBCanvasConnectionView *newConnection = [[TBCanvasConnectionView alloc] initWithFrame:CGRectZero];
     newConnection.lineColor = [UIColor colorWithRed:230.0f/255.0f green:213.0f/255.0f blue:143.0f/255.0f alpha:1.0f];
     return newConnection;
 }
 
-- (NSSet *)connectionsForNodeOnCanvasAtIndexPath:(NSIndexPath *)indexPath
+- (NSSet *)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView connectionsForNodeAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
 }
 
-- (TBCanvasMoveHandleView *)moveHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasMoveHandleView *)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView moveHandleForConnectionAtPoint:(CGPoint)point
 {
     return [[TBCanvasMoveHandleView alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
 
-- (TBCanvasCreateHandleView *)newHandleForConnectionAtPoint:(CGPoint)point
+- (TBCanvasCreateHandleView *)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView newHandleForConnectionAtPoint:(CGPoint)point
 {
     return [[TBCanvasCreateHandleView alloc] initWithFrame:CGRectMake(point.x - 10.0, point.y - 10.0, 20.0, 20.0)];
 }
