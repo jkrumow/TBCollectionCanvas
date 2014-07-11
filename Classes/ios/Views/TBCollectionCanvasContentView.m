@@ -670,8 +670,8 @@ static CGFloat AUTOSCROLL_MARGIN        =  1.0;
     }
     
     // Reset to default size if necessary.
-    size.width  = MAX(size.width,  CONTENT_WIDTH * zoomScale);
-    size.height = MAX(size.height, CONTENT_HEIGHT * zoomScale);
+    size.width  = MAX(size.width,  kTBCollectionCanvasContentViewWidth * zoomScale);
+    size.height = MAX(size.height, kTBCollectionCanvasContentViewHeight * zoomScale);
     
     // Reset to screen size if necessary.
     size.width  = MAX(size.width,  self.scrollView.bounds.size.width) + OUTER_CANVAS_MARGIN * zoomScale;

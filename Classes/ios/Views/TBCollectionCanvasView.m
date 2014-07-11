@@ -10,8 +10,8 @@
 
 #import "TBCollectionCanvasView.h"
 
-CGFloat const CONTENT_WIDTH  = 1000.0;
-CGFloat const CONTENT_HEIGHT = 1000.0;
+CGFloat const kTBCollectionCanvasContentViewWidth  = 1000.0;
+CGFloat const kTBCollectionCanvasContentViewHeight = 1000.0;
 
 @implementation TBCollectionCanvasView
 
@@ -30,7 +30,7 @@ CGFloat const CONTENT_HEIGHT = 1000.0;
         
         self.delegate = self;
         
-        TBCollectionCanvasContentView *collectionCanvasView = [[TBCollectionCanvasContentView alloc] initWithFrame:CGRectMake(0.0, 0.0, CONTENT_WIDTH, CONTENT_HEIGHT)];
+        TBCollectionCanvasContentView *collectionCanvasView = [[TBCollectionCanvasContentView alloc] initWithFrame:CGRectMake(0.0, 0.0, kTBCollectionCanvasContentViewWidth, kTBCollectionCanvasContentViewHeight)];
         self.collectionCanvasView = collectionCanvasView;
         self.collectionCanvasView.scrollView = self;
         

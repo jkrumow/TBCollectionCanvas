@@ -12,8 +12,8 @@
 
 #import "TBCollectionCanvasContentView.h"
 
-extern CGFloat const CONTENT_WIDTH;
-extern CGFloat const CONTENT_HEIGHT;
+extern CGFloat const kTBCollectionCanvasContentViewWidth;
+extern CGFloat const kTBCollectionCanvasContentViewHeight;
 
 /**
  This is the TBCollectionCanvasView. It is the master view in with the TBCollectionCanvasContentView will be displayed as a subview - to make the whole canvas zoomable.
