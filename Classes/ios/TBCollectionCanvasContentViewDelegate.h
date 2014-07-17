@@ -19,7 +19,8 @@
 
 /**
  A node has been selected on the canvas view.
- 
+
+ @param collectionCanvasContentView The TBCollectionCanvasContentView instance calling this method
  @param indexPath The index path of the selected TBCanvasNodeView object.
  */
 - (void)collectionCanvasContentView:(TBCollectionCanvasContentView *)collectionCanvasContentView didSelectNodeAtIndexPath:(NSIndexPath *)indexPath;
