@@ -5,10 +5,10 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        This project contains a canvas with moveable nodes. Nodes can be added, deleted, moved, connected, collapsed and expanded.
                        DESC
-  s.homepage         = "https://github.com/tarbrain/TBCollectionCanvas"
+  s.homepage         = "https://github.com/jkrumow/TBCollectionCanvas"
   s.license          = 'MIT'
-  s.author           = { "Julian Krumow" => "julian.krumow@tarbrain.com" }
-  s.source           = { :git => "https://github.com/tarbrain/TBCollectionCanvas.git", :tag => s.version.to_s }
+  s.author           = { "Julian Krumow" => "julian.krumow@bogusmachine.com" }
+  s.source           = { :git => "https://github.com/jkrumow/TBCollectionCanvas.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '5.0'
   s.ios.deployment_target = '5.0'
