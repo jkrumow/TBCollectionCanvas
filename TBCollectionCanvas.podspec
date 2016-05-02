@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TBCollectionCanvas"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = "A canvas displaying views that can be moved and connected."
   s.description      = <<-DESC
                        This project contains a canvas with moveable nodes. Nodes can be added, deleted, moved, connected, collapsed and expanded.
