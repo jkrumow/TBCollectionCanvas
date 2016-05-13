@@ -1,1 +1,3 @@
-pod "TBCollectionCanvas", :path => "../TBCollectionCanvas.podspec"
+target 'CollectionCanvasDemo' do
+  pod "TBCollectionCanvas", :path => "../TBCollectionCanvas.podspec"
+end
